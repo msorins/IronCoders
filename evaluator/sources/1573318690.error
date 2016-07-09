@@ -1,0 +1,8 @@
+/home/ironcoders/public_html/evaluator/sources/1573318690.cpp: In function 'void display_members(char*)':
+/home/ironcoders/public_html/evaluator/sources/1573318690.cpp:11:24: error: 'filename' was not declared in this scope
+     ifstream openfile (filename);
+                        ^
+/home/ironcoders/public_html/evaluator/sources/1573318690.cpp: In function 'int main()':
+/home/ironcoders/public_html/evaluator/sources/1573318690.cpp:30:30: error: 'strcpy' was not declared in this scope
+  strcpy(v, "cursuri-edit.php");
+                              ^

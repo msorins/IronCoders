@@ -1,0 +1,9 @@
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Poligon/sources/236.cpp: In function 'int main()':
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Poligon/sources/236.cpp:16:10: error: no match for 'operator>' in 'std::cin > r[i]'
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Poligon/sources/236.cpp:16:10: note: candidates are:
+/usr/include/c++/4.6/bits/stl_pair.h:220:5: note: template<class _T1, class _T2> bool std::operator>(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+/usr/include/c++/4.6/bits/stl_iterator.h:303:5: note: template<class _Iterator> bool std::operator>(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+/usr/include/c++/4.6/bits/stl_iterator.h:353:5: note: template<class _IteratorL, class _IteratorR> bool std::operator>(const std::reverse_iterator<_IteratorL>&, const std::reverse_iterator<_IteratorR>&)
+/usr/include/c++/4.6/bits/basic_string.h:2547:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator>(const std::basic_string<_CharT, _Traits, _Alloc>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+/usr/include/c++/4.6/bits/basic_string.h:2559:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator>(const std::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+/usr/include/c++/4.6/bits/basic_string.h:2571:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator>(const _CharT*, const std::basic_string<_CharT, _Traits, _Alloc>&)

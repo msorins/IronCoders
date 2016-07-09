@@ -1,0 +1,25 @@
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:3:7: error: 'nmax' does not name a type
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:4:20: error: 'nmax' was not declared in this scope
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:4:28: error: 'nmax' was not declared in this scope
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:5:17: error: 'nmax' was not declared in this scope
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:5:28: error: 'nmax' was not declared in this scope
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:5:38: error: 'nmax' was not declared in this scope
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:6:9: error: 'nmax' was not declared in this scope
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:8:11: error: '::main' must return 'int'
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp: In function 'int main()':
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:12:2: error: 'cin' was not declared in this scope
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:12:2: note: suggested alternative:
+/usr/include/c++/4.6/iostream:61:18: note:   'std::cin'
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:13:12: error: expected ')' before ';' token
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:13:22: error: expected ';' before ')' token
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:14:24: error: expected ';' before ')' token
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:18:2: error: 'cost' was not declared in this scope
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:20:12: error: expected ')' before ';' token
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:20:21: error: expected ';' before ')' token
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:23:12: error: expected ')' before ';' token
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:23:20: error: expected ';' before ')' token
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:33:12: error: expected ')' before ';' token
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:33:20: error: expected ';' before ')' token
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:38:13: error: expected ')' before ';' token
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:38:22: error: expected ';' before ')' token
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Scara/sources/248.cpp:110:1: error: expected '}' at end of input

@@ -1,0 +1,7 @@
+/home/ironcoders/public_html/evaluator/sources/699087933.cpp: In function 'int main()':
+/home/ironcoders/public_html/evaluator/sources/699087933.cpp:10:23: error: cannot convert 'FILE* {aka _IO_FILE*}' to 'char*' for argument '1' to 'char* fgets(char*, int, FILE*)'
+   while(fgets(f,s,1024)){
+                       ^
+/home/ironcoders/public_html/evaluator/sources/699087933.cpp:11:13: error: cannot convert 'FILE* {aka _IO_FILE*}' to 'const char*' for argument '1' to 'int puts(const char*)'
+       puts(f);
+             ^

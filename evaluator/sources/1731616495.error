@@ -1,0 +1,8 @@
+/home/ironcoders/public_html/evaluator/sources/1731616495.cpp: In function 'void display_members(char*)':
+/home/ironcoders/public_html/evaluator/sources/1731616495.cpp:11:24: error: 'filename' was not declared in this scope
+     ifstream openfile (filename);
+                        ^
+/home/ironcoders/public_html/evaluator/sources/1731616495.cpp: In function 'int main()':
+/home/ironcoders/public_html/evaluator/sources/1731616495.cpp:29:36: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]
+  display_members("cursuri-edit.php");
+                                    ^

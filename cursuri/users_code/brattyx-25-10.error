@@ -1,0 +1,4 @@
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/cursuri/users_code/brattyx-25-10.cpp: In function 'int main()':
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/cursuri/users_code/brattyx-25-10.cpp:10:14: error: invalid conversion from 'char*' to 'int' [-fpermissive]
+/usr/include/ctype.h:115:1: error:   initializing argument 1 of 'int isdigit(int)' [-fpermissive]
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/cursuri/users_code/brattyx-25-10.cpp:10:16: error: lvalue required as left operand of assignment

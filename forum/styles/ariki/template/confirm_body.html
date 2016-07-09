@@ -1,0 +1,28 @@
+<!-- INCLUDE overall_header.html -->
+
+<div id="page-body" class="wrap">
+
+<form id="confirm" action="{S_CONFIRM_ACTION}" method="post">
+<div class="panel">
+	<div class="content">
+
+	<h2>{MESSAGE_TITLE}</h2>
+	<p>{MESSAGE_TEXT}</p>
+	
+	<fieldset class="submit-buttons">
+		{S_HIDDEN_FIELDS}
+		<div class="btn btn-big">
+			<input type="submit" name="confirm" value="{L_YES}" /> 
+		</div>
+		<div class="btn btn-big">
+			<input type="submit" name="cancel" value="{L_NO}" />
+		</div>
+	</fieldset>
+
+	</div>
+</div>
+</form>
+
+</div>
+
+<!-- INCLUDE overall_footer.html -->

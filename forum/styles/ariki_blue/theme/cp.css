@@ -1,0 +1,285 @@
+/* Control Panel Styles
+---------------------------------------- */
+/* Main CP box
+---------------------------------------- */
+#cp-menu {
+	float: left;
+	width: 20%;
+	font-size: 1.2em;
+	margin-bottom: 20px;
+	padding-right: 10px;
+}
+
+#cp-main {
+	float: left;
+	width: 80%;
+	margin-bottom: 20px;
+	padding-left: 10px;
+}
+
+#cp-main > *:last-child, #cp-main > form > *:last-child {
+	margin-bottom: 0;
+}
+#cp-main > .panel > .content > h3,
+#cp-main > .panel > .content > form > h3 {
+	font-size: 1.385em;
+}
+
+.cp-mini {
+	margin-top: 20px;
+	padding: 20px;
+}
+.cp-mini input {
+	border-radius: 3px;
+	cursor: pointer;
+	float: right;
+	height: 35px;
+	padding: 0 10px;
+	transition: background-color 0.15s ease 0s;
+}
+.mini { position: relative; }
+.mini dt { line-height: 1.5; font-weight: 700; margin-bottom: 20px; }
+.mini dd { line-height: 35px; margin-bottom: 5px; }
+.mini dd:last-child { margin-bottom: 0; }
+
+/* UCP navigation menu
+----------------------------------------*/
+#navigation > ul { list-style: none; width: 100%; }
+#navigation > ul:nth-child(n+2) {
+	border-top-width: 20px;
+	border-top-style: solid;
+}
+#navigation > ul > li { width: 100%; }
+#navigation > ul > li > a {
+	width: 100%;
+	line-height: 40px;
+	min-height: 40px;
+	display: block;
+	padding: 0 20px;
+	transition: background-color 0.15s ease;
+}
+
+/* Preferences panel layout
+----------------------------------------*/
+.cplist {
+	list-style: none;
+	font-size: 0.786em;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+.cplist dl {
+	min-height: 42px;
+	background-repeat: no-repeat;
+	background-position: 7px center;
+}
+.cplist dl:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+.cplist dt { font-size: 1.166em; line-height: 1.5; }
+.cplist dt > .topictitle { font-size: 1.143em; line-height: 1; }
+.cplist dt, .cplist dd { float: left; }
+.cplist dt { width: 60%; }
+.cplist dl.icon > dt { padding-left: 70px; padding-right: 20px; }
+.cplist dt > i { font-size: 11px; margin-right: 7px; }
+.cplist dfn { display: none; }
+.cplist .posts { width: 10%; text-align: center; }
+.cplist .lastpost i { font-size: 11px; }
+.cplist .redirect { width: 15%; text-align: center; }
+.cplist > li {
+	min-height: 82px;
+	padding: 20px;
+}
+.cplist > li:first-child { border-radius: 3px 3px 0 0; }
+.cplist > li:last-child { border-radius: 0 0 3px 3px; }
+.cplist > li:only-child { border-radius: 3px; }
+
+.cplist .pagination {
+	font-size: 0.786em;
+	font-weight: 400;
+}
+.cplist .pagination > span {
+	height: 20px;
+	padding: 0;
+}
+.cplist .pagination > span > .page-dots,
+.cplist .pagination > span > a {
+	height: 20px;
+	line-height: 20px;
+	padding: 0 10px;
+	display: block;
+	float: left;
+	transition: background-color 0.15s ease;
+}
+
+.cplist .lastpost, .cplist-header .lastpost { width: 20%; }
+.cplist .option, .cplist-header .option { margin-right: 20px; }
+.cplist .info, .cplist-header .info { width: 30%; }
+.cplist .mark, .cplist-header .mark { width: 10%; text-align: center; }
+.cplist .extra, .cplist-header .extra { width: 10%; text-align: center; }
+.cplist .time, .cplist-header .time { width: 20%; text-align: center; }
+.cplist .moderation, .cplist-header .moderation { width: 30%; }
+
+.cplist-header + .cplist > li:first-child { border-radius: 0; }
+.cplist-header + .cplist > li:only-child { border-radius: 0 0 3px 3px; }
+
+.cplist-header {
+	height: 40px;
+	list-style: none;
+	font-size: 0.786em;
+	text-transform: uppercase;
+	line-height: 40px;
+	padding: 0 20px;
+	border-radius: 3px 3px 0 0;
+}
+.cplist-header dt, .cplist-header dd { float: left; }
+.cplist-header dt { width: 60%; }
+.cplist-header .posts { width: 10%; text-align: center; }
+
+#cp-main .table1 {
+	box-shadow: none;
+	border-collapse: separate;
+	border-spacing: 0;
+	border-radius: 3px;
+	overflow: hidden;
+}
+#cp-main .table1 thead {
+	font-size: 0.786em;
+}
+#cp-main .table1 tbody {
+	font-size: 1em;
+}
+
+#cp-main .pagination { font-size: 0.846em; }
+#cp-main .display-options { font-size: 1em; }
+#cp-main #viewfolder > .display-options { font-size: 1.1em; }
+#cp-main .search { font-size: 1em; }
+
+.select-option {
+	height: 35px;
+	line-height: 35px;
+	border-radius: 3px;
+	padding: 0 0 0 20px;
+	font-size: 1.1em;
+	float: right;
+	display: block;
+	overflow: hidden;
+}
+.select-option label { margin-right: 20px; }
+.select-option select {
+	padding: 5.5px 5.5px 5.5px 20px;
+	cursor: pointer;
+	transition: background-color 0.15s ease;
+	vertical-align: top;
+}
+.select-option input {
+	cursor: pointer;
+	height: 35px;
+	padding: 0 10px;
+	transition: background-color 0.15s ease;
+	vertical-align: top;
+}
+
+textarea#warning { width: 100%; min-height: 200px; }
+select#usernames { height: 85px; }
+
+.delete {
+	float: left;
+	margin-right: 20px;
+}
+.delete input {
+	font-family: "FontAwesome";
+	line-height: normal;
+	height: auto;
+	cursor: pointer;
+	margin-left: 5px;
+	font-size: 14px;
+	transition: color 0.15s ease;
+}
+
+#cp-main .postbody {
+	margin: 0;
+	width: 100%;
+	font-size: 1em;
+}
+
+#cp-main .post .postbody {
+	font-size: 1.3em;
+	width: auto;
+	margin-right: 200px;
+}
+
+#cp-main .content > .postbody {
+	padding: 0;
+	box-shadow: none;
+}
+
+/* Topicreview */
+#cp-main .content #topicreview .postbody { font-size: 1em; margin: 0; }
+#cp-main #topicreview .postbody { font-size: 1.3em; }
+
+/* PM Styles
+----------------------------------------*/
+.pmlist > dd { margin-bottom: 20px; }
+.pmlist > dd:last-child { margin-bottom: 0; }
+.pmlist #username_list {
+	height: 126px;
+	width: 100%;
+	font-size: 1em;
+	line-height: 1.5;
+}
+#postingbox #group_list {
+	height: 84px;
+	width: 100%;
+	font-size: 1em;
+	line-height: 1.5;
+}
+
+/* PM marking colours */
+.pm_marked_colour:before {
+	display: block;
+	content: "";
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	float: left;
+	margin-right: 10px;
+	margin-top: 5px;
+	position: absolute;
+}
+.pm_replied_colour:before {
+	display: block;
+	content: "";
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	float: left;
+	margin-right: 10px;
+	margin-top: 5px;
+	position: absolute;
+}
+.pm_friend_colour:before {
+	display: block;
+	content: "";
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	float: left;
+	margin-right: 10px;
+	margin-top: 5px;
+	position: absolute;
+}
+.pm_foe_colour:before {
+	display: block;
+	content: "";
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	float: left;
+	margin-right: 10px;
+	margin-top: 5px;
+	position: absolute;
+}
+
+.pm-legend:before { position: static; }

@@ -1,0 +1,79 @@
+<footer id="page-footer-c">
+	<div id="footer-menu" class="wrap">
+		<ul>
+			<!-- IF not S_IS_BOT -->
+			<!-- IF S_WATCH_FORUM_LINK -->
+			<li><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}">{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
+			<!-- IF U_WATCH_TOPIC -->
+			<li><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}">{L_WATCH_TOPIC}</a></li><!-- ENDIF -->
+			<!-- IF U_BOOKMARK_TOPIC -->
+			<li><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}">{L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
+			<!-- IF U_BUMP_TOPIC -->
+			<li><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a></li><!-- ENDIF -->
+			<!-- ENDIF -->
+			<!-- IF U_TEAM -->
+			<li>
+				<a href="{U_TEAM}">{L_THE_TEAM}</a>
+			</li>
+			<!-- ENDIF -->
+			<!-- IF not S_IS_BOT -->
+			<li>
+				<a href="{U_DELETE_COOKIES}">{L_DELETE_COOKIES}</a>
+			</li>
+			<!-- ENDIF -->
+			<li class="right">
+				<span>{S_TIMEZONE}</span>
+			</li>
+		</ul>
+	</div>
+
+	<div class="footer-social-overall">
+		<div class="wrap">
+		<ul class="footer-social">
+			<li>
+				<a href="#"><i class="fa fa-pinterest fa-lg"></i></a>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-tumblr fa-lg"></i></a>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-vimeo-square fa-lg"></i></a>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-dribbble fa-lg"></i></a>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-flickr fa-lg"></i></a>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
+			</li>
+			<li>
+				<a href="#"><i class="fa fa-rss fa-lg"></i></a>
+			</li>
+		</ul>
+		</div>
+	</div>
+
+	<div class="copyright">
+		<div class="wrap">{CREDIT_LINE}
+			<br />Ariki Theme Created by Gramziu
+			<!-- IF TRANSLATION_INFO --><br />{TRANSLATION_INFO}<!-- ENDIF -->
+			<!-- IF DEBUG_OUTPUT --><br />{DEBUG_OUTPUT}<!-- ENDIF -->
+		</div>
+
+		<div>
+			<a id="bottom" accesskey="z"></a>
+			<!-- IF not S_IS_BOT -->{RUN_CRON_TASK}<!-- ENDIF -->
+		</div>
+	</div>
+</footer>

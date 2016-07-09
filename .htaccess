@@ -1,0 +1,43 @@
+# Disable server signature
+ServerSignature Off
+Options -Indexes
+
+Options +SymLinksIfOwnerMatch  
+RewriteEngine On  
+
+RewriteCond %{SCRIPT_FILENAME} !-d  
+RewriteCond %{SCRIPT_FILENAME} !-f  
+RewriteRule ^arhiva-educationala arhiva.php?type=arhiva-educationala
+RewriteRule ^arhiva/(.*) arhiva.php?type=view&name=$1
+RewriteRule ^cursuri/(.*) cursuri.php?type=view&name=$1
+RewriteRule ^competitii/(.*) competitii.php?type=view&name=$1
+
+ErrorDocument 404 /404.php
+ErrorDocument 403 /404.php
+
+
+<IfModule mod_security.c>
+  SecFilterEngine On
+  SecFilterScanPOST On
+  SecFilter "delete[[:space:]]+from"
+  SecFilter "insert[[:space:]]+into"
+  SecFilter "select.+from
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresByType image/jpg "access 1 day"
+  ExpiresByType image/gif "access 1 day"
+  ExpiresByType image/jpg "access 1 day"
+  ExpiresByType image/jpeg "access 1 day"
+  ExpiresByType image/png "access 1 day"
+  ExpiresByType text/css "access 1 hour"
+  ExpiresByType application/x-javascript "access plus 1 day"
+  ExpiresByType text/javascript "access plus 1 day"
+  ExpiresByType application/javascript "access plus 1 day"
+</IfModule>
+
+
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>

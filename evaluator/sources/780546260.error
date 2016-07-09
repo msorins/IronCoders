@@ -1,0 +1,4 @@
+/home/ironcoders/public_html/evaluator/sources/780546260.cpp: In function 'int main()':
+/home/ironcoders/public_html/evaluator/sources/780546260.cpp:30:30: error: 'strcpy' was not declared in this scope
+  strcpy(v, "cursuri-edit.php");
+                              ^

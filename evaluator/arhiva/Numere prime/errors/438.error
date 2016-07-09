@@ -1,0 +1,2 @@
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Numere prime/sources/438.cpp: In function 'int main()':
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Numere prime/sources/438.cpp:27:7: error: 'i' was not declared in this scope

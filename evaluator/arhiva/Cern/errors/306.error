@@ -1,0 +1,4 @@
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Cern/sources/306.cpp: In function 'int main()':
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Cern/sources/306.cpp:9:8: error: expected primary-expression before '>>' token
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Cern/sources/306.cpp:63:8: error: expected primary-expression before '.' token
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Cern/sources/306.cpp:63:17: error: 'fo' was not declared in this scope

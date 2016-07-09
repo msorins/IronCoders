@@ -1,0 +1,7 @@
+/home/ironcoders/public_html/evaluator/sources/1585376066.cpp: In function 'int main()':
+/home/ironcoders/public_html/evaluator/sources/1585376066.cpp:6:9: error: variable 'DIR dirp' has initializer but incomplete type
+     DIR dirp = opendir(".");
+         ^
+/home/ironcoders/public_html/evaluator/sources/1585376066.cpp:7:12: error: 'dp' was not declared in this scope
+    while ((dp = readdir(dirp)) != NULL)
+            ^

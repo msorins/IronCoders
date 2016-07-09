@@ -1,0 +1,6 @@
+/home/admin/web/ironcoders.com/public_html/cursuri/users_code/vlad_negrea-21-8.cpp: In function 'int main()':
+/home/admin/web/ironcoders.com/public_html/cursuri/users_code/vlad_negrea-21-8.cpp:6:23: error: expected ';' before ')' token
+/home/admin/web/ironcoders.com/public_html/cursuri/users_code/vlad_negrea-21-8.cpp:8:1: error: expected primary-expression before '}' token
+/home/admin/web/ironcoders.com/public_html/cursuri/users_code/vlad_negrea-21-8.cpp:8:1: error: expected ')' before '}' token
+/home/admin/web/ironcoders.com/public_html/cursuri/users_code/vlad_negrea-21-8.cpp:8:1: error: expected primary-expression before '}' token
+/home/admin/web/ironcoders.com/public_html/cursuri/users_code/vlad_negrea-21-8.cpp:8:1: error: expected ';' before '}' token

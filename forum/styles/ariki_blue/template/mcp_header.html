@@ -1,0 +1,60 @@
+<!-- INCLUDE overall_header.html -->
+
+<div id="second-menu">
+<div class="wrap">
+	<ul>
+		<!-- BEGIN l_block1 -->
+		<li>
+			<a href="{l_block1.U_TITLE}" <!-- IF l_block1.S_SELECTED --> class="active"<!-- ENDIF -->>{l_block1.L_TITLE}</a>
+		</li>
+		<!-- END l_block1 -->
+	</ul>
+</div>
+</div>
+
+<div id="page-body" class="wrap">
+
+<div id="cp-menu">
+	<div id="navigation">
+		<ul>
+		<!-- BEGIN l_block1 -->
+		<!-- IF l_block1.S_SELECTED -->
+			<!-- BEGIN l_block2 -->
+			<!-- IF l_block1.l_block2.S_SELECTED -->
+			<li id="active-subsection"><a href="{l_block1.l_block2.U_TITLE}"><span>{l_block1.l_block2.L_TITLE}<!-- IF l_block1.l_block2.ADD_ITEM --> ({l_block1.l_block2.ADD_ITEM})<!-- ENDIF --></span></a></li>
+			<!-- ELSE -->
+			<li><a href="{l_block1.l_block2.U_TITLE}"><span>{l_block1.l_block2.L_TITLE}<!-- IF l_block1.l_block2.ADD_ITEM --> ({l_block1.l_block2.ADD_ITEM})<!-- ENDIF --></span></a></li>
+			<!-- ENDIF -->
+			<!-- END l_block2 -->
+		<!-- ENDIF -->
+		<!-- END l_block1 -->
+		</ul>
+	</div>
+</div>
+
+<div id="cp-main">
+	<!-- IF MESSAGE -->
+	<div class="panel">
+	<div class="content">
+		<h2>{L_MESSAGE}</h2>
+		<p class="error">{MESSAGE}</p>
+		<p><!-- BEGIN return_links -->{return_links.MESSAGE_LINK}<br /><br /><!-- END return_links --></p>
+	</div>
+	</div>
+	<!-- ENDIF -->
+
+	<!-- IF CONFIRM_MESSAGE -->
+	<div class="panel">
+		<form id="confirm" method="post" action="{S_CONFIRM_ACTION}"{S_FORM_ENCTYPE}>
+		<div class="content">
+			<h2>{L_PLEASE_CONFIRM}</h2>
+			<p>{CONFIRM_MESSAGE}</p>
+		
+			<fieldset class="submit-buttons">
+				{S_HIDDEN_FIELDS}<input class="button1" type="submit" name="submit" value="{L_YES}" />&nbsp; 
+				<input class="button2" type="cancel" value="{L_NO}" />
+			</fieldset>
+		</div>
+		</form>
+	</div>
+	<!-- ENDIF -->

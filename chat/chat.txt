@@ -1,0 +1,21 @@
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>Test
+<div class="mesaj"><a href="/profil.php?user=mirceaortensia"><span class="blue">mirceaortensia</a> : </span>Test
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>Test 2
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>tt
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>aaa
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>bb
+<div class="mesaj"><a href="/profil.php?user=theffo"><span class="blue">theffo</a> : </span>hello world
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>da
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>test
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>dap
+<div class="mesaj"><a href="/profil.php?user=test123"><span class="blue">test123</a> : </span>test
+<div class="mesaj"><a href="/profil.php?user=test123"><span class="blue">test123</a> : </span>dsadssdadsasd
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>da
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>test
+<div class="mesaj"><a href="/profil.php?user=codelikeno1b4"><span class="blue">codelikeno1b4</a> : </span>Soryn, esti ?
+<div class="mesaj"><a href="/profil.php?user=DanyBv"><span class="blue">DanyBv</a> : </span>Salut
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>da, acum sunt
+<div class="mesaj"><a href="/profil.php?user=GiantDadMeta"><span class="blue">GiantDadMeta</a> : </span>cioc cioc
+<div class="mesaj"><a href="/profil.php?user=GiantDadMeta"><span class="blue">GiantDadMeta</a> : </span>traieste careva pe aici?
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>d
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>da :)

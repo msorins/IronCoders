@@ -1,0 +1,42 @@
+<h2>{L_TITLE}<!-- IF CUR_FOLDER_NAME -->: {CUR_FOLDER_NAME}<!-- ENDIF --></h2>
+
+<form id="viewfolder" method="post" action="{S_PM_ACTION}">
+
+<div class="panel">
+	<div class="content">
+
+	<!-- IF FOLDER_STATUS and FOLDER_MAX_MESSAGES neq 0 --><p>{FOLDER_STATUS}</p><!-- ENDIF -->
+
+	<!-- IF U_POST_REPLY_PM or U_POST_NEW_TOPIC or U_FORWARD_PM -->
+	<div class="actions">
+	<!-- ENDIF -->
+	<!-- IF U_POST_REPLY_PM or U_POST_NEW_TOPIC or U_FORWARD_PM or TOTAL_MESSAGES or S_VIEW_MESSAGE -->
+		<!-- IF U_POST_REPLY_PM --><div class="btn btn-reply"><a title="{L_POST_REPLY_PM}" href="{U_POST_REPLY_PM}"><i class="fa fa-reply"></i>{L_POST_REPLY_PM}</a></div>
+		<!-- ELSEIF U_POST_NEW_TOPIC --><div class="btn btn-post"><a href="{U_POST_NEW_TOPIC}" accesskey="n" title="{L_UCP_PM_COMPOSE}"><i class="fa fa-reply"></i>{L_UCP_PM_COMPOSE}</a></div><!-- ENDIF -->
+		<!-- IF U_FORWARD_PM --><div class="forwardpm-icon"><a title="{L_POST_FORWARD_PM}" href="{U_FORWARD_PM}"><span></span>{L_FORWARD_PM}</a></div><!-- ENDIF -->
+		<!-- IF U_POST_REPLY_PM and S_PM_RECIPIENTS gt 1 --><div class="reply-all"><a class="left" title="{L_REPLY_TO_ALL}" href="{U_POST_REPLY_ALL}">{L_REPLY_TO_ALL}</a></div><!-- ENDIF -->			
+	<!-- ENDIF -->
+
+	<!-- IF TOTAL_MESSAGES or S_VIEW_MESSAGE -->
+	<div class="pagination">
+		<!-- IF S_VIEW_MESSAGE -->
+		<a class="{S_CONTENT_FLOW_BEGIN}" href="{U_CURRENT_FOLDER}">{L_RETURN_TO} {CUR_FOLDER_NAME}</a>
+		<!-- ENDIF -->
+		<!-- IF FOLDER_CUR_MESSAGES neq 0 -->
+			<!-- IF TOTAL_MESSAGES -->
+			<span class="total">{TOTAL_MESSAGES}</span>
+			<!-- ENDIF -->
+			<!-- IF PAGE_NUMBER -->
+			<!-- IF PAGINATION -->
+			<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>
+			<span class="count">{PAGINATION}</span>
+			<!-- ELSE -->
+			<span>{PAGE_NUMBER}</span>
+			<!-- ENDIF -->
+			<!-- ENDIF -->
+		<!-- ENDIF -->
+	</div>
+	<!-- ENDIF -->
+	<!-- IF U_POST_REPLY_PM or U_POST_NEW_TOPIC or U_FORWARD_PM -->
+	</div>
+	<!-- ENDIF -->

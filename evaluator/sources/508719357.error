@@ -1,0 +1,7 @@
+/home/ironcoders/public_html/evaluator/sources/508719357.cpp: In function 'int main()':
+/home/ironcoders/public_html/evaluator/sources/508719357.cpp:5:9: error: 'a' was not declared in this scope
+  cin >> a >> b;
+         ^
+/home/ironcoders/public_html/evaluator/sources/508719357.cpp:5:14: error: 'b' was not declared in this scope
+  cin >> a >> b;
+              ^

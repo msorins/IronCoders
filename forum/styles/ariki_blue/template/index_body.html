@@ -1,0 +1,116 @@
+<!-- INCLUDE overall_header.html -->
+
+<!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
+<div id="second-menu">
+<div class="wrap">
+<ul>
+	<!-- IF S_DISPLAY_SEARCH -->
+	<li>
+		<a href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a>
+	</li>
+	<!-- IF S_LOAD_UNREADS -->
+	<li>
+		<a href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a>
+	</li>
+	<!-- ENDIF -->
+	<!-- IF S_USER_LOGGED_IN -->
+	<li>
+		<a href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a>
+	</li>
+	<!-- ENDIF -->
+	<li>
+		<a href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a>
+	</li>
+	<!-- ENDIF -->
+	<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
+	<li class="right">
+		<a href="{U_MARK_FORUMS}" accesskey="m">{L_MARK_FORUMS_READ}</a>
+	</li>
+	<!-- ENDIF -->
+	<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+	<li class="right">
+		<a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a>
+	</li>
+	<!-- ENDIF -->
+</ul>
+</div>
+</div>
+<!-- ENDIF -->
+
+<div id="page-body" class="wrap">
+
+<!-- IF $CUSTOM_SIDEBAR -->
+	<div class="c-wrap">
+		<div class="c8">
+			<!-- INCLUDE forumlist_body.html -->
+<!-- ELSE -->
+	<!-- INCLUDE forumlist_body.html -->
+<!-- ENDIF -->
+
+<!-- IF S_DISPLAY_ONLINE_LIST -->
+<div class="secondary-block">
+	<div class="secondary-block-header">
+		<!-- IF U_VIEWONLINE -->
+		<h3>
+			<a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a>
+		</h3>
+		<!-- ELSE -->
+		<h3>
+			{L_WHO_IS_ONLINE}
+		</h3>
+		<!-- ENDIF -->
+	</div>
+	<div class="secondary-block-content">
+		<p>
+			{TOTAL_USERS_ONLINE} ({L_ONLINE_EXPLAIN})<br />{RECORD_USERS}<br /> <br />{LOGGED_IN_USER_LIST}
+			<!-- IF LEGEND -->
+			<br /><em>{L_LEGEND}: {LEGEND}</em>
+			<!-- ENDIF -->
+		</p>
+	</div>
+</div>
+<!-- ENDIF -->
+
+<!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->
+<div class="secondary-block">
+	<div class="secondary-block-header">
+		<h3>
+			{L_BIRTHDAYS}
+		</h3>
+	</div>
+	<div class="secondary-block-content">
+		<p>
+			<!-- IF BIRTHDAY_LIST -->{L_CONGRATULATIONS}: <strong>{BIRTHDAY_LIST}</strong><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF -->
+		</p>
+	</div>
+</div>
+<!-- ENDIF -->
+
+<!-- IF NEWEST_USER -->
+<div class="secondary-block">
+	<div class="secondary-block-header">
+		<h3>
+			{L_STATISTICS}
+		</h3>
+	</div>
+	<div class="secondary-block-content">
+		<p>
+			{TOTAL_POSTS} &bull; {TOTAL_TOPICS} &bull; {TOTAL_USERS} &bull; {NEWEST_USER}
+		</p>
+	</div>
+</div>
+<!-- ENDIF -->
+
+<!-- IF $CUSTOM_SIDEBAR -->
+		</div>
+
+		<div class="c2">
+			<!-- INCLUDE custom_sidebar.html -->
+		</div>
+	</div>
+<!-- ENDIF -->
+
+
+</div>
+
+<!-- INCLUDE overall_footer.html -->

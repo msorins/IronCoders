@@ -1,0 +1,2 @@
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>test
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>merge?

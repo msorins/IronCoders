@@ -1,0 +1,303 @@
+/* Responsive
+---------------------------------------- */
+@media (max-width: 1280px) {
+	.wrap {
+		width: 90%;
+	}
+	
+	.panel > .back2top,
+	.post > .back2top {
+		right: 0;
+		bottom: 0;
+		border-radius: 3px 0 0 0;
+	}
+}
+
+@media (max-width: 1080px) {
+	.wrap {
+		width: 95%;
+	}
+}
+
+@media (max-width: 880px) {
+	.wrap {
+		width: 96%;
+	}
+
+	.column1 {
+		width: 100%;
+		float: none;
+		padding-right: 0;
+	}
+	.column2 {
+		width: 100%;
+		float: none;
+		padding-left: 0;
+	}
+
+	.c1,
+	.c2,
+	.c3,
+	.c4,
+	.c5,
+	.c6,
+	.c7,
+	.c8,
+	.c9 {
+		padding: 0;
+		width: 100%;
+	}
+
+	.c3-3 {
+		padding: 0;
+		width: 100%;
+	}
+
+	.c1-5,
+	.c2-5,
+	.c3-5,
+	.c4-5,
+	.c5-5,
+	.c6-5,
+	.c7-5,
+	.c8-5 {
+		padding: 0;
+		width: 100%;
+	}
+
+	.postprofile {
+		float: none;
+		padding: 20px;
+		width: 100%;
+	}
+
+	.postbody {
+		float: none;
+		margin-left: 0;
+		width: 100%;
+	}
+
+	#cp-menu {
+		float: none;
+		width: 100%;
+		font-size: 1.2em;
+		margin-bottom: 20px;
+		padding-right: 0;
+	}
+
+	#cp-main {
+		float: none;
+		width: 100%;
+		margin-bottom: 20px;
+		padding-left: 0;
+	}
+
+	#smiley-box {
+		width: 100%;
+		float: none;
+		padding-left: 0;
+	}
+	#message-box, #format-buttons {
+		width: 100%;
+		float: none;
+		padding-right: 0;
+	}
+
+	.post-icons > li i {
+		margin-right: 0;
+	}
+	.post-icons > li span {
+		display: none;
+	}
+}
+
+@media (min-width: 681px) {
+	#nav-menu {
+		display: none !important;
+	}
+}
+
+@media (max-width: 680px) {
+	.wrap {
+		width: 98%;
+	}
+
+	#logo {
+		width: 80%;
+		text-align: center;
+	}
+
+	#page-header-b {
+		min-height: 100px;
+	}
+	#page-header-b #logo {
+		float: left;
+	}
+
+	#page-nav {
+		display: none;
+	}
+
+	#nav-menu {
+		list-style: none;
+		line-height: 50px;
+		font-size: 1.4em;
+		width: 100%;
+		clear: both;
+		display: none;
+	}
+	#nav-menu > li {
+		height: 100%;
+		width: 100%;
+	}
+	#nav-menu li > a {
+		height: 100%;
+		width: 100%;
+		display: inline-block;
+		padding: 0 20px;
+		text-align: center;
+		transition: background-color 0.15s ease;
+	}
+
+	/* Drop Down */
+	#nav-menu li > ul {
+		list-style: none;
+		line-height: 50px;
+		font-size: 1em;
+		width: 100%;
+		clear: both;
+		position: relative;
+	}
+	#nav-menu li > ul:before {
+		border-style: solid;
+		border-width: 0 10px 10px 9px;
+		top: -10px;
+		content: "";
+		height: 0;
+		left: 50%;
+		margin-left: -5px;
+		margin-bottom: 0;
+		position: absolute;
+		width: 0;
+		z-index: 999;
+	}
+	#nav-menu li > ul > li {
+		height: 100%;
+		width: 100%;
+		position: relative;
+	}
+	#nav-menu li > ul > li:before {
+		cursor: default;
+		font-size: 14px;
+		padding: 0 10px;
+		content: "\f149";
+		display: block;
+		font-family: "FontAwesome";
+		height: 100%;
+		float: left;
+		position: absolute;
+	}
+	#nav-menu li > ul > li > a {
+		height: 100%;
+		width: 100%;
+		display: inline-block;
+		padding: 0 20px;
+		text-align: center;
+		transition: background-color 0.15s ease;
+	}
+
+	.rmenu {
+		font-size: 24px;
+		display: block;
+		height: 100px;
+		width: 20%;
+		text-align: center;
+		min-height: 100px;
+		line-height: 100px;
+		float: right;
+		cursor: pointer;
+	}
+	#user-menu-a,
+	#user-menu-b,
+	#user-menu-c {
+		min-height: 80px !important;
+	}
+	#user-menu-a > ul,
+	#user-menu-b > ul,
+	#user-menu-c > .wrap > ul {
+		display: none !important;
+	}
+	#page-search {
+		height: 80px !important;
+		width: 100% !important;
+		margin: 0 !important;
+	}
+	#page-search .keywords {
+		height: 80px !important;
+		width: 80% !important;
+	}
+	#page-search .button {
+		height: 80px !important;
+		width: 20% !important;
+		font-size: 24px !important;
+	}
+
+	#second-menu > .wrap > ul > li {
+		width: 50%;
+		float: left !important;
+	}
+	#second-menu > .wrap > ul > li > a {
+		width: 100%;
+		text-align: center;
+	}
+	#second-menu > .wrap > ul > .legend:before {
+		position: absolute;
+	}
+
+	h2 {
+		text-align: center;
+	}
+
+	.topics-posts, .posts-views {
+		display: none;
+		width: 45% !important;
+	}
+	.lastpost, .redirect {
+		width: 45% !important;
+	}
+
+	dl.profile-details-avatar,
+	dl.profile-details {
+		width: 100%;
+	}
+
+	.rank-img {
+		display: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.wrap {
+		width: 99%;
+	}
+	#second-menu > .wrap > ul > li {
+		width: 100%;
+	}
+	#second-menu > .wrap > ul > .legend:before {
+		content: "\f107";
+		line-height: normal;
+		text-align: center;
+		width: 100%;
+		height: auto;
+		position: static;
+	}
+
+	.lastpost {
+		display: none;
+	}
+
+	.forabg-content dt,
+	.forumbg-content dt {
+		width: 100%;
+	}
+}

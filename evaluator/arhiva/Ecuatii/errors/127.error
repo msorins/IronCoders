@@ -1,0 +1,4 @@
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Ecuatii/sources/127.cpp: In function 'int main()':
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Ecuatii/sources/127.cpp:25:11: warning: converting to non-pointer type 'char' from NULL [-Wconversion-null]
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Ecuatii/sources/127.cpp: In function 'void rezolva(char*, long int&, long int&)':
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Ecuatii/sources/127.cpp:54:18: warning: converting to non-pointer type 'char' from NULL [-Wconversion-null]

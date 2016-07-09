@@ -1,0 +1,6 @@
+/home/ironcoders/public_html/evaluator/sources/1485032636.cpp: In function 'int main()':
+/home/ironcoders/public_html/evaluator/sources/1485032636.cpp:20:3: error: expected primary-expression at end of input
+   return 
+   ^
+/home/ironcoders/public_html/evaluator/sources/1485032636.cpp:20:3: error: expected ';' at end of input
+/home/ironcoders/public_html/evaluator/sources/1485032636.cpp:20:3: error: expected '}' at end of input

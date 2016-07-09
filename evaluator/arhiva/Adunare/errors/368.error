@@ -1,0 +1,2 @@
+/usr/bin/ld: cannot find /var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Adunare/sources/: File format not recognized
+collect2: ld returned 1 exit status

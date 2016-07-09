@@ -1,0 +1,38 @@
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+libuuid:x:100:101::/var/lib/libuuid:
+syslog:x:101:104::/home/syslog:/bin/false
+messagebus:x:103:107::/var/run/dbus:/bin/false
+bind:x:104:111::/var/cache/bind:/bin/false
+postfix:x:105:113::/var/spool/postfix:/bin/false
+dovecot:x:106:115:Dovecot mail server,,,:/usr/lib/dovecot:/bin/false
+dovenull:x:107:116:Dovecot login user,,,:/nonexistent:/bin/false
+landscape:x:108:117::/var/lib/landscape:/bin/false
+sshd:x:109:65534::/var/run/sshd:/usr/sbin/nologin
+fetchmail:x:102:65534::/var/lib/fetchmail:/bin/false
+mysql:x:110:106:MySQL Server,,,:/nonexistent:/bin/false
+clamav:x:111:118::/var/lib/clamav:/bin/false
+postgres:x:112:120:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+proftpd:x:113:65534::/var/run/proftpd:/bin/false
+ftp:x:114:65534::/srv/ftp:/bin/false
+debian-spamd:x:115:122::/var/lib/spamassassin:/bin/sh
+mirceasorin:x:1000:1000::/home/mirceasorin:/bin/sh
+ironcoders:x:1001:1001::/home/ironcoders:/bin/sh
+whitemagic:x:1002:1002::/home/whitemagic:/bin/sh
+mail.mirceasorin:x:1003:1000:Mircea Sorin Sebastian:/home/mirceasorin/homes/mail:/dev/null

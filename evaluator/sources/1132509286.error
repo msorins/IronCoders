@@ -1,0 +1,4 @@
+/home/ironcoders/public_html/evaluator/sources/1132509286.cpp: In function 'int main()':
+/home/ironcoders/public_html/evaluator/sources/1132509286.cpp:15:1: error: 'cout' is not a member of 'std'
+ std::cout<<str;
+ ^

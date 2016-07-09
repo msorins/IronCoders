@@ -1,0 +1,4 @@
+/home/ironcoders/public_html/evaluator/sources/1607476893.cpp: In function 'int main()':
+/home/ironcoders/public_html/evaluator/sources/1607476893.cpp:7:12: error: 'dp' was not declared in this scope
+    while ((dp = readdir(dirp)) != NULL)
+            ^

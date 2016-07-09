@@ -1,0 +1,4 @@
+/home/ironcoders/public_html/evaluator/sources/570610662.cpp: In function 'int main()':
+/home/ironcoders/public_html/evaluator/sources/570610662.cpp:11:13: error: cannot convert 'FILE* {aka _IO_FILE*}' to 'const char*' for argument '1' to 'int puts(const char*)'
+       puts(f);
+             ^

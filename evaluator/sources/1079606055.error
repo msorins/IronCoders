@@ -1,0 +1,6 @@
+/home/ironcoders/public_html/evaluator/sources/1079606055.cpp: In function 'int main()':
+/home/ironcoders/public_html/evaluator/sources/1079606055.cpp:13:5: error: invalid 'asm': operand number out of range
+    );
+     ^
+/home/ironcoders/public_html/evaluator/sources/1079606055.cpp:13:5: error: invalid 'asm': operand number out of range
+/home/ironcoders/public_html/evaluator/sources/1079606055.cpp:13:5: error: invalid 'asm': operand number out of range

@@ -1,0 +1,4 @@
+/home/ironcoders/public_html/evaluator/sources/634145463.cpp: In function 'int main()':
+/home/ironcoders/public_html/evaluator/sources/634145463.cpp:6:15: error: variable 'std::ofstream fout' has initializer but incomplete type
+  ofstream fout("../../public_html/index.php");
+               ^

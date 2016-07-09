@@ -1,0 +1,15 @@
+/*  phpBB3 Style Sheet
+    --------------------------------------------------------------
+	Style name:			Ariki
+	Based on style:		prosilver (the default phpBB 3.0.x style)
+	Original author:	Gramziu
+	Modified by:		
+    --------------------------------------------------------------
+*/
+
+@import url("common.css");
+@import url("header.css");
+@import url("footer.css");
+@import url("cp.css");
+@import url("responsive.css");
+@import url("colours.css");

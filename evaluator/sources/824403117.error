@@ -1,0 +1,10 @@
+/home/ironcoders/public_html/evaluator/sources/824403117.cpp: In function 'int foo()':
+/home/ironcoders/public_html/evaluator/sources/824403117.cpp:4:8: error: expected '(' before '{' token
+   __asm{
+        ^
+/home/ironcoders/public_html/evaluator/sources/824403117.cpp:5:4: error: 'mov' was not declared in this scope
+    mov eax,100
+    ^
+/home/ironcoders/public_html/evaluator/sources/824403117.cpp:5:8: error: expected ';' before 'eax'
+    mov eax,100
+        ^

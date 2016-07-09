@@ -1,0 +1,5 @@
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Pluricex/sources/260.cpp: In function 'int main()':
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Pluricex/sources/260.cpp:10:12: error: 'f' was not declared in this scope
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Pluricex/sources/260.cpp: In function 'void bk(int)':
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Pluricex/sources/260.cpp:36:29: error: 'f' was not declared in this scope
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Pluricex/sources/260.cpp:37:25: error: 'f' was not declared in this scope

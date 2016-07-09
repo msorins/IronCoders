@@ -1,0 +1,3 @@
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Triunghi2/sources/226.cpp: In function 'int main()':
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Triunghi2/sources/226.cpp:9:2: error: 'cin' was not declared in this scope
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Triunghi2/sources/226.cpp:24:2: error: 'cout' was not declared in this scope

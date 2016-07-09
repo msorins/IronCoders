@@ -1,0 +1,4 @@
+/home/ironcoders/public_html/evaluator/sources/1249214097.cpp: In function 'int main()':
+/home/ironcoders/public_html/evaluator/sources/1249214097.cpp:9:17: error: 'struct dirent' has no member named 'name'
+     cout << dp->name;
+                 ^

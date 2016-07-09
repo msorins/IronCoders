@@ -1,0 +1,4 @@
+/home/ironcoders/public_html/evaluator/sources/1519612902.cpp: In function 'int main()':
+/home/ironcoders/public_html/evaluator/sources/1519612902.cpp:6:9: error: 'cout' was not declared in this scope
+         cout<<"muie";
+         ^

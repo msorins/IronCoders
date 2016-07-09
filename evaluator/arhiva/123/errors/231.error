@@ -1,0 +1,2 @@
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/123/sources/231.cpp: In function 'int Conditie(int, int, int)':
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/123/sources/231.cpp:20:23: error: 'abs' was not declared in this scope

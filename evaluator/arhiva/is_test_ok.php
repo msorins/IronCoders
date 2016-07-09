@@ -1,0 +1,1 @@
+<?php\nfunction is_test_ok($in, $ok, $output)\n	{\n\n	}\n?>

@@ -1,0 +1,21 @@
+.panel {
+border-style: solid;
+border-width: 1px;
+border-color: #d9d9d9;
+margin-bottom: 1.25rem;
+padding: 1.25rem;
+background: #f2f2f2;
+}
+#stripped
+{
+background: -webkit-linear-gradient(45deg, #399E98 25%, #3aa19b 25%, #3aa19b 50%, #399E98 50%, #399E98 75%, #3aa19b 75%, #3aa19b);
+background: -moz-linear-gradient(45deg, #399E98 25%, #3aa19b 25%, #3aa19b 50%, #399E98 50%, #399E98 75%, #3aa19b 75%, #3aa19b);
+background: -o-linear-gradient(45deg, #399E98 25%, #3aa19b 25%, #3aa19b 50%, #399E98 50%, #399E98 75%, #3aa19b 75%, #3aa19b);
+background: linear-gradient(45deg, #399E98 25%, #3aa19b 25%, #3aa19b 50%, #399E98 50%, #399E98 75%, #3aa19b 75%, #3aa19b);
+  background-size:100px 100px;
+}
+
+.navbar-text1
+{
+color:white;
+}

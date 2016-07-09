@@ -1,0 +1,4 @@
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/cursuri/users_code/adinaturcu95-21-6.cpp: In function 'int main()':
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/cursuri/users_code/adinaturcu95-21-6.cpp:5:5: error: expected ';' before 'x'
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/cursuri/users_code/adinaturcu95-21-6.cpp:7:2: error: 'then' was not declared in this scope
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/cursuri/users_code/adinaturcu95-21-6.cpp:7:7: error: expected ';' before 'cout'

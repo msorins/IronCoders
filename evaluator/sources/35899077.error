@@ -1,0 +1,24 @@
+/home/ironcoders/public_html/evaluator/sources/35899077.cpp:1:1: error: stray '\' in program
+ include \masm32\include\masm32rt.inc ; use the Masm32 library
+ ^
+/home/ironcoders/public_html/evaluator/sources/35899077.cpp:1:1: error: stray '\' in program
+/home/ironcoders/public_html/evaluator/sources/35899077.cpp:1:1: error: stray '\' in program
+/home/ironcoders/public_html/evaluator/sources/35899077.cpp:1:1: error: 'include' does not name a type
+/home/ironcoders/public_html/evaluator/sources/35899077.cpp:1:40: error: 'use' does not name a type
+ include \masm32\include\masm32rt.inc ; use the Masm32 library
+                                        ^
+/home/ironcoders/public_html/evaluator/sources/35899077.cpp:6:26: error: 'generate' does not name a type
+  switch rv(nrandom, 9) ; generate a number between 0 and 8
+                          ^
+/home/ironcoders/public_html/evaluator/sources/35899077.cpp:10:16: error: 'in' does not name a type
+  case ecx    ; in contrast to most other programming languages,
+                ^
+/home/ironcoders/public_html/evaluator/sources/35899077.cpp:11:21: error: 'the' does not name a type
+   print "case 7"  ; the Masm32 switch allows "variable cases"
+                     ^
+/home/ironcoders/public_html/evaluator/sources/35899077.cpp:23:23: error: 'print' does not name a type
+   mov ebx, 19       ; print 20 stars
+                       ^
+/home/ironcoders/public_html/evaluator/sources/35899077.cpp:27:20: error: 'loop' does not name a type
+   .Until Sign?   ; loop until the sign flag is set
+                    ^

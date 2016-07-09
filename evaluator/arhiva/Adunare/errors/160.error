@@ -1,0 +1,18 @@
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Adunare/sources/160.cpp: In function 'void afis()':
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Adunare/sources/160.cpp:25:22: error: no match for 'operator<' in 'cout < "da"'
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Adunare/sources/160.cpp:25:22: note: candidates are:
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Adunare/sources/160.cpp:25:22: note: operator<(const char*, const char*) <built-in>
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Adunare/sources/160.cpp:25:22: note:   no known conversion for argument 1 from 'std::ofstream {aka std::basic_ofstream<char>}' to 'const char*'
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Adunare/sources/160.cpp:25:22: note: operator<(void*, void*) <built-in>
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Adunare/sources/160.cpp:25:22: note:   no known conversion for argument 2 from 'const char [3]' to 'void*'
+/usr/include/c++/4.6/bits/stl_pair.h:207:5: note: template<class _T1, class _T2> bool std::operator<(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+/usr/include/c++/4.6/bits/stl_iterator.h:291:5: note: template<class _Iterator> bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+/usr/include/c++/4.6/bits/stl_iterator.h:341:5: note: template<class _IteratorL, class _IteratorR> bool std::operator<(const std::reverse_iterator<_IteratorL>&, const std::reverse_iterator<_IteratorR>&)
+/usr/include/c++/4.6/bits/basic_string.h:2510:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::basic_string<_CharT, _Traits, _Alloc>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+/usr/include/c++/4.6/bits/basic_string.h:2522:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+/usr/include/c++/4.6/bits/basic_string.h:2534:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const _CharT*, const std::basic_string<_CharT, _Traits, _Alloc>&)
+/usr/include/c++/4.6/bits/stl_vector.h:1290:5: note: template<class _Tp, class _Alloc> bool std::operator<(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)
+/usr/include/c++/4.6/bits/stl_deque.h:272:5: note: template<class _Tp, class _Ref, class _Ptr> bool std::operator<(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _Ref, _Ptr>&)
+/usr/include/c++/4.6/bits/stl_deque.h:280:5: note: template<class _Tp, class _RefL, class _PtrL, class _RefR, class _PtrR> bool std::operator<(const std::_Deque_iterator<_Tp, _RefL, _PtrL>&, const std::_Deque_iterator<_Tp, _RefR, _PtrR>&)
+/usr/include/c++/4.6/bits/stl_deque.h:1935:5: note: template<class _Tp, class _Alloc> bool std::operator<(const std::deque<_Tp, _Alloc>&, const std::deque<_Tp, _Alloc>&)
+/usr/include/c++/4.6/bits/stl_queue.h:284:5: note: template<class _Tp, class _Seq> bool std::operator<(const std::queue<_Tp, _Seq>&, const std::queue<_Tp, _Seq>&)

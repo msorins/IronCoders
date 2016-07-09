@@ -1,0 +1,29 @@
+/home/ironcoders/public_html/evaluator/sources/885240251.c: In function 'main':
+/home/ironcoders/public_html/evaluator/sources/885240251.c:10:3: warning: passing argument 1 of 'fgets' from incompatible pointer type [enabled by default]
+   while(fgets(f,s,1024)){
+   ^
+In file included from /home/ironcoders/public_html/evaluator/sources/885240251.c:1:0:
+/usr/include/stdio.h:622:14: note: expected 'char * __restrict__' but argument is of type 'struct FILE *'
+ extern char *fgets (char *__restrict __s, int __n, FILE *__restrict __stream)
+              ^
+/home/ironcoders/public_html/evaluator/sources/885240251.c:10:3: warning: passing argument 2 of 'fgets' makes integer from pointer without a cast [enabled by default]
+   while(fgets(f,s,1024)){
+   ^
+In file included from /home/ironcoders/public_html/evaluator/sources/885240251.c:1:0:
+/usr/include/stdio.h:622:14: note: expected 'int' but argument is of type 'char *'
+ extern char *fgets (char *__restrict __s, int __n, FILE *__restrict __stream)
+              ^
+/home/ironcoders/public_html/evaluator/sources/885240251.c:10:3: warning: passing argument 3 of 'fgets' makes pointer from integer without a cast [enabled by default]
+   while(fgets(f,s,1024)){
+   ^
+In file included from /home/ironcoders/public_html/evaluator/sources/885240251.c:1:0:
+/usr/include/stdio.h:622:14: note: expected 'struct FILE * __restrict__' but argument is of type 'int'
+ extern char *fgets (char *__restrict __s, int __n, FILE *__restrict __stream)
+              ^
+/home/ironcoders/public_html/evaluator/sources/885240251.c:11:7: warning: passing argument 1 of 'puts' from incompatible pointer type [enabled by default]
+       puts(f);
+       ^
+In file included from /home/ironcoders/public_html/evaluator/sources/885240251.c:1:0:
+/usr/include/stdio.h:695:12: note: expected 'const char *' but argument is of type 'struct FILE *'
+ extern int puts (const char *__s);
+            ^

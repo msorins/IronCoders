@@ -1,0 +1,10 @@
+/tmp/cch9SYxF.o: In function `main':
+279.cpp:(.text+0xa): undefined reference to `std::cin'
+279.cpp:(.text+0xf): undefined reference to `std::basic_istream<char, std::char_traits<char> >::operator>>(int&)'
+279.cpp:(.text+0x1c): undefined reference to `std::basic_istream<char, std::char_traits<char> >::operator>>(int&)'
+279.cpp:(.text+0x31): undefined reference to `std::cout'
+279.cpp:(.text+0x36): undefined reference to `std::basic_ostream<char, std::char_traits<char> >::operator<<(int)'
+/tmp/cch9SYxF.o: In function `__static_initialization_and_destruction_0(int, int)':
+279.cpp:(.text+0x64): undefined reference to `std::ios_base::Init::Init()'
+279.cpp:(.text+0x69): undefined reference to `std::ios_base::Init::~Init()'
+collect2: ld returned 1 exit status

@@ -1,0 +1,58 @@
+<!doctype html>
+
+<title>CodeMirror</title>
+<meta charset="utf-8"/>
+
+<link rel=stylesheet href="lib/codemirror.css">
+<link rel=stylesheet href="doc/docs.css">
+<script src="lib/codemirror.js"></script>
+<script src="mode/xml/xml.js"></script>
+<script src="mode/javascript/javascript.js"></script>
+<script src="mode/css/css.js"></script>
+<script src="mode/htmlmixed/htmlmixed.js"></script>
+<script src="addon/edit/matchbrackets.js"></script>
+
+<script src="doc/activebookmark.js"></script>
+
+<style>
+  .CodeMirror { height: auto; border: 1px solid #ddd; }
+  .CodeMirror-scroll { max-height: 200px; }
+  .CodeMirror pre { padding-left: 7px; line-height: 1.25; }
+</style>
+
+
+<section id=demo>
+  <h2>This is CodeMirror</h2>
+<form style="height:900px; position: relative; margin-top: .5em;"><textarea id=demotext>
+#include <iostream>
+using namespace std;
+int main()
+{
+	cout<<"Hello World";
+	cout<<2+2;
+}
+  </textarea>
+  <select id="demolist" onchange="document.location = this.options[this.selectedIndex].value;">
+    <option value="#">Other demos...</option>
+    <option value="demo/complete.html">Autocompletion</option>
+    <option value="demo/folding.html">Code folding</option>
+    <option value="demo/theme.html">Themes</option>
+    <option value="mode/htmlmixed/index.html">Mixed language modes</option>
+    <option value="demo/bidi.html">Bi-directional text</option>
+    <option value="demo/variableheight.html">Variable font sizes</option>
+    <option value="demo/search.html">Search interface</option>
+    <option value="demo/vim.html">Vim bindings</option>
+    <option value="demo/emacs.html">Emacs bindings</option>
+    <option value="demo/sublime.html">Sublime Text bindings</option>
+    <option value="demo/tern.html">Tern integration</option>
+    <option value="demo/merge.html">Merge/diff interface</option>
+    <option value="demo/fullscreen.html">Full-screen editor</option>
+  </select></form>
+  <script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("demotext"), {
+      lineNumbers: true,
+      mode: "text/html",
+      matchBrackets: true
+    });
+  </script>
+</section>

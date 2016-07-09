@@ -1,0 +1,131 @@
+<div id="user-menu-c">
+<div class="wrap">
+	<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+	<div id="page-search">
+		<form action="{U_SEARCH}" method="get" id="search">
+		<fieldset>
+			<input name="keywords" class="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" placeholder="{L_SEARCH}" />
+			<input value="&#xf002;" class="button" type="submit" />
+			{S_SEARCH_HIDDEN_FIELDS}
+		</fieldset>
+		</form>
+	</div>
+	<!-- ENDIF -->
+
+	<ul>
+		<!-- IF U_ACP -->
+		<li>
+			<a class="w-icon" href="{U_ACP}"><i class="fa fa-tachometer"></i></a>
+		</li>
+		<!-- ENDIF -->
+
+		<!-- IF U_MCP -->
+		<li>
+			<a class="w-icon" href="{U_MCP}"><i class="fa fa-gavel"></i></a>
+		</li>
+		<!-- ENDIF -->
+
+	<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+		<li>
+			<a class="w-icon" href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="fa fa-user"></i></a>
+		</li>
+		<!-- IF S_DISPLAY_PM -->
+		<li>
+			<a class="w-icon" href="{U_PRIVATEMSGS}"><i class="fa fa-envelope"></i>
+			<!-- IF S_NEW_PM -->
+				<span>{PRIVATE_MESSAGE_INFO}</span>
+			<!-- ELSEIF PRIVATE_MESSAGE_INFO_UNREAD -->
+				<span class="hid">{PRIVATE_MESSAGE_INFO_UNREAD}</span>
+			<!-- ENDIF -->
+			</a>
+		</li>
+		<!-- ENDIF -->
+		<!-- IF U_RESTORE_PERMISSIONS -->
+		<li>
+			<a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a>
+		</li>
+		<!-- ENDIF -->
+	<!-- ENDIF -->
+		
+		<!-- IF not S_IS_BOT -->
+			<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+			<li>
+				<a class="w-icon-text" href="{U_REGISTER}"><i class="fa fa-check-square-o"></i><span>{L_REGISTER}</span></a>
+			</li>
+			<!-- ENDIF -->
+			<!-- IF not S_USER_LOGGED_IN -->
+			<li>
+				<a class="w-icon-text" href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="fa fa-sign-in"></i><span>{L_LOGIN_LOGOUT}</span></a>
+			</li>
+			<!-- ENDIF -->
+			<!-- IF S_USER_LOGGED_IN -->
+			<li>
+				<a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">{L_LOGIN_LOGOUT}</a>
+			</li>
+			<!-- ENDIF -->
+		<!-- ENDIF -->
+	</ul>
+</div>
+</div>
+
+<header id="page-header-c">
+<div class="wrap">
+	<a id="top" accesskey="t"></a>
+	<a id="wrap"></a>
+	<div id="logo">
+		<a href="{U_INDEX}" title="{L_INDEX}">{SITE_LOGO_IMG}</a>
+		<p class="skiplink"><a href="#start_here">{L_SKIP}</a></p>
+	</div>
+
+	<nav id="page-nav">
+		<ul>
+			<!-- IF $CUSTOM_NAVIGATION -->
+				<!-- INCLUDE custom_navigation.html -->
+			<!-- ENDIF -->
+		</ul>
+	</nav>
+
+	<div class="rmenu" onclick="open_menu('nav-menu');"><i class="fa fa-bars"></i></div>
+
+	<ul id="nav-menu">
+		<!-- IF $CUSTOM_NAVIGATION -->
+			<!-- INCLUDE custom_navigation.html -->
+		<!-- ENDIF -->
+		<!-- IF U_ACP -->
+		<li>
+			<a href="{U_ACP}">{L_ACP}</a>
+		</li>
+		<!-- ENDIF -->
+		<!-- IF U_MCP -->
+		<li>
+			<a href="{U_MCP}">{L_MCP}</a>
+		</li>
+		<!-- ENDIF -->
+	<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+		<li>
+			<a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e">{L_PROFILE}</a>
+		</li>
+		<!-- IF S_DISPLAY_PM -->
+		<li>
+			<a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}</a>
+		</li>
+		<!-- ENDIF -->
+		<!-- IF U_RESTORE_PERMISSIONS -->
+		<li>
+			<a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a>
+		</li>
+		<!-- ENDIF -->
+	<!-- ENDIF -->
+		<!-- IF not S_IS_BOT -->
+			<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+			<li>
+				<a href="{U_REGISTER}">{L_REGISTER}</a>
+			</li>
+			<!-- ENDIF -->
+			<li>
+				<a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">{L_LOGIN_LOGOUT}</a>
+			</li>
+		<!-- ENDIF -->
+	</ul>
+</div>
+</header>

@@ -1,0 +1,19 @@
+<?php
+	define('IN_PHPBB', true);
+	$phpbb_root_path = ROOT.'forum/';
+	$phpEx = substr(strrchr(__FILE__, '.'), 1);
+	include(ROOT."forum/common.php");
+	// Start session management
+	$user->session_begin();
+	$auth->acl($user->data);
+	$user->setup();
+	if(($user->data['user_id'] == ANONYMOUS))
+		$user_name=NULL;
+	else
+	{
+		$user_name=$user->data['username'];
+		$user_id=$user->data['user_id'];
+		$user_rang=$user->data['user_rang'];
+		$user_cursuri_terminate=$user->data['user_cursuri_terminate'];
+	}
+?>

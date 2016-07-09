@@ -1,0 +1,4 @@
+/home/admin/web/ironcoders.com/public_html/cursuri/users_code/Butnariu Tudor-21-6.cpp: In function 'int main()':
+/home/admin/web/ironcoders.com/public_html/cursuri/users_code/Butnariu Tudor-21-6.cpp:4:1: error: only constructors take member initializers
+/home/admin/web/ironcoders.com/public_html/cursuri/users_code/Butnariu Tudor-21-6.cpp:4:1: error: expected identifier before '{' token
+/home/admin/web/ironcoders.com/public_html/cursuri/users_code/Butnariu Tudor-21-6.cpp:9:1: error: expected ';' before '}' token

@@ -1,0 +1,2 @@
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/ajobs/7/sources/9_nume_prenume_01.cpp: In function 'int main()':
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/ajobs/7/sources/9_nume_prenume_01.cpp:52:24: warning: overflow in implicit constant conversion [-Woverflow]

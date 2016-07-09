@@ -1,0 +1,4 @@
+/home/admin/web/ironcoders.com/public_html/cursuri/users_code/ClaudiuH-25-10.cpp: In function 'int main()':
+/home/admin/web/ironcoders.com/public_html/cursuri/users_code/ClaudiuH-25-10.cpp:10:14: error: invalid conversion from 'char*' to 'int' [-fpermissive]
+/usr/include/ctype.h:115:1: error:   initializing argument 1 of 'int isdigit(int)' [-fpermissive]
+/home/admin/web/ironcoders.com/public_html/cursuri/users_code/ClaudiuH-25-10.cpp:12:2: error: 'else' without a previous 'if'

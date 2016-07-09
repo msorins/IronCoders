@@ -1,0 +1,2 @@
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Reteta/sources/259.cpp: In function 'int main()':
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Reteta/sources/259.cpp:61:25: warning: converting to non-pointer type 'char' from NULL [-Wconversion-null]

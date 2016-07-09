@@ -1,0 +1,8 @@
+/home/ironcoders/public_html/evaluator/sources/1611784961.c: In function 'main':
+/home/ironcoders/public_html/evaluator/sources/1611784961.c:4:3: error: too few arguments to function 'fopen'
+   FILE *f=fopen("../index.php");
+   ^
+In file included from /home/ironcoders/public_html/evaluator/sources/1611784961.c:1:0:
+/usr/include/stdio.h:272:14: note: declared here
+ extern FILE *fopen (const char *__restrict __filename,
+              ^

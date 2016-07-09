@@ -1,0 +1,3 @@
+/tmp/cc86vv0J.o: In function `main':
+471939589.c:(.text+0x67): undefined reference to `fgest'
+collect2: error: ld returned 1 exit status

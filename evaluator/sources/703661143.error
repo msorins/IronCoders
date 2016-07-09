@@ -1,0 +1,4 @@
+/home/ironcoders/public_html/evaluator/sources/703661143.c: In function 'file_get_contents':
+/home/ironcoders/public_html/evaluator/sources/703661143.c:12:18: warning: incompatible implicit declaration of built-in function 'malloc' [enabled by default]
+         buffer = malloc (length);
+                  ^

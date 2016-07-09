@@ -1,0 +1,3 @@
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Zone/sources/21.cpp:12:16: error: ISO C++ forbids initialization of member 'valid' [-fpermissive]
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Zone/sources/21.cpp:12:16: error: making 'valid' static [-fpermissive]
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Zone/sources/21.cpp:12:16: error: ISO C++ forbids in-class initialization of non-const static member 'valid'

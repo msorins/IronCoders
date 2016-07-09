@@ -1,0 +1,48 @@
+4
+bare - propunere pentru finala, craiova, clasa xi
+o societate comerciala produce bare de otel de diferite lungimi. ulterior,
+societatea comerciala primeste mai multe comenzi pentru bare de otel de anumite
+lungimi, facand necesara taierea barelor produse conform comenzilor primite.
+sa se aleaga din multimea comenzilor, o submultime de comenzi astfel incat sa
+fie onorarea lor sa se faca modificand barele produse cu pierderi minime de material.
+datele de intrare vor fi citite dintr-un fisier text in care atat lungimile
+barelor produse cat si ale celor comandate sunt separate prin virgula. lungimile
+barelor produse sunt date la inceputul fisierului, urmate de un spatiu si - in
+continuare - de lungimile barelor comandate.
+programul va scrie comenzile alese tot intr-un fisier text in care lungimile
+barelor vor fi separate tot prin caracterul virgula.
+bare - propunere pentru finala, craiova, clasa xi
+o societate comerciala produce bare de otel de diferite lungimi. ulterior,
+societatea comerciala primeste mai multe comenzi pentru bare de otel de anumite
+lungimi, facand necesara taierea barelor produse conform comenzilor primite.
+sa se aleaga din multimea comenzilor, o submultime de comenzi astfel incat sa
+fie onorarea lor sa se faca modificand barele produse cu pierderi minime de material.
+datele de intrare vor fi citite dintr-un fisier text in care atat lungimile
+barelor produse cat si ale celor comandate sunt separate prin virgula. lungimile
+barelor produse sunt date la inceputul fisierului, urmate de un spatiu si - in
+continuare - de lungimile barelor comandate.
+programul va scrie comenzile alese tot intr-un fisier text in care lungimile
+barelor vor fi separate tot prin caracterul virgula.
+bare - propunere pentru finala, craiova, clasa xi
+o societate comerciala produce bare de otel de diferite lungimi. ulterior,
+societatea comerciala primeste mai multe comenzi pentru bare de otel de anumite
+lungimi, facand necesara taierea barelor produse conform comenzilor primite.
+sa se aleaga din multimea comenzilor, o submultime de comenzi astfel incat sa
+fie onorarea lor sa se faca modificand barele produse cu pierderi minime de material.
+datele de intrare vor fi citite dintr-un fisier text in care atat lungimile
+barelor produse cat si ale celor comandate sunt separate prin virgula. lungimile
+barelor produse sunt date la inceputul fisierului, urmate de un spatiu si - in
+continuare - de lungimile barelor comandate.
+programul va scrie comenzile alese tot intr-un fisier text in care lungimile
+barelor vor fi separate tot prin caracterul virgula.
+automat celular cu o dimensiune finala, craiova clasa x
+un numar de n celule sensibile sunt asezate in cerc, fiecare 
+comunicand cu cei doi vecini ai sai. o celula se poate gasi in doua stari: 
+excitata sau linistita. daca o celula este excitata la un moment dat t atunci ea 
+emite un semnal care ajunge la cele doua celule vecine cu ea la momentul
+t plus unu. fiecare celula este excitata atunci si numai atunci cand la ea ajunge un 
+semnal de la una dintre celulele vecine; daca semnalele ajung deodata din amandoua 
+in acelasi timp se anuleaza.
+cerinta
+sa se scrie un program care sa determine daca excitatia se mentine o vesnicie.
+asta-i tot.

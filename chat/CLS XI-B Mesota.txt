@@ -1,0 +1,14 @@
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>fa
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>test
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>test2
+<div class="mesaj"><a href="/profil.php?user=napalmblast"><span class="blue">napalmblast</a> : </span>nu vreau Man
+<div class="mesaj"><a href="/profil.php?user=napalmblast"><span class="blue">napalmblast</a> : </span>ma uit la suley,Man
+<div class="mesaj"><a href="/profil.php?user=andreea.lup"><span class="blue">andreea.lup</a> : </span>ma 
+<div class="mesaj"><a href="/profil.php?user=andreea.lup"><span class="blue">andreea.lup</a> : </span>test 3
+<div class="mesaj"><a href="/profil.php?user=andreea.lup"><span class="blue">andreea.lup</a> : </span>ma
+<div class="mesaj"><a href="/profil.php?user=napalmblast"><span class="blue">napalmblast</a> : </span>Merge totiii
+<div class="mesaj"><a href="/profil.php?user=ovidiu"><span class="blue">ovidiu</a> : </span>nu-mi spune tu mie ce sa fac
+<div class="mesaj"><a href="/profil.php?user=raybendic"><span class="blue">raybendic</a> : </span>aaa
+<div class="mesaj"><a href="/profil.php?user=raybendic"><span class="blue">raybendic</a> : </span>kk
+<div class="mesaj"><a href="/profil.php?user=raybendic"><span class="blue">raybendic</a> : </span>dddddddd
+<div class="mesaj"><a href="/profil.php?user=alexandraa"><span class="blue">alexandraa</a> : </span>elllo

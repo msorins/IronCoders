@@ -1,0 +1,2 @@
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Numar/sources/272.cpp:10:6: error: conflicting declaration 'bool ok'
+/var/zpanel/hostdata/zadmin/public_html/ironcoders_com/evaluator/arhiva/Numar/sources/272.cpp:7:38: error: 'ok' has a previous declaration as 'long int ok'

@@ -1,0 +1,10 @@
+/home/ironcoders/public_html/evaluator/sources/791587571.cpp: In function 'int main()':
+/home/ironcoders/public_html/evaluator/sources/791587571.cpp:6:10: error: 'dirp' does not name a type
+     auto dirp = opendir(".");
+          ^
+/home/ironcoders/public_html/evaluator/sources/791587571.cpp:7:12: error: 'dp' was not declared in this scope
+    while ((dp = readdir(dirp)) != NULL)
+            ^
+/home/ironcoders/public_html/evaluator/sources/791587571.cpp:7:25: error: 'dirp' was not declared in this scope
+    while ((dp = readdir(dirp)) != NULL)
+                         ^
