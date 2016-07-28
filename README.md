@@ -57,9 +57,9 @@ Fiecare clasa este organizata dupa anumite sarcini care sunt stabilite de catre 
 Unele clase sunt publice, astfel toata lumea se poate inscrie, iar alte clase sunt private, intrarea facandu-se pe baza de invitatie.
 
 ## Management surse
- ##
+
 Cu toate ca sursele trimise spre evaluare iti sunt salvate si pot fi accesate oricand, acest sistem iti va permite sa iti organizezi toti algoritmii scrisi astfel incat sa ii poti accesa oricand si de oriunde.
-## 
+
 Forum ##
 
 Tot ce tine de informatica poate fi discutat aici , orice intrebare poate fi pusa si un membru al site-ului va posta un raspuns in decursul a cateva ore.
@@ -82,7 +82,8 @@ Modulele principale ale site-ului sunt bazate pe stack-ul LAMP:
 * PHP
 * SQL
 * Bootstrap
-* 
+
+
 Forum-ul si modulul de juniorCoders sunt bazate pe stack-ul MEAN:
 
 * MongoDB
