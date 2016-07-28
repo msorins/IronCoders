@@ -1,0 +1,4 @@
+/home/ironcoders/public_html/evaluator/sources/1727632475.c: In function 'main':
+/home/ironcoders/public_html/evaluator/sources/1727632475.c:5:3: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+   fprintf(f,"");
+   ^

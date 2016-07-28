@@ -44,7 +44,7 @@ $status=NULL; $time=NULL; $memory=NULL; $errors=NULL;
 
 
 //Tot procesul de evaluare este aici
-evaluate($cale , $file_name , $evaluate_id , $evaluate_limbaj , $in , $out, $error, 10000, 5000);
+evaluate($cale.$file_name , $cale.$evaluate_id , $evaluate_limbaj , $cale.$in , $cale.$out, $cale.$error, 10000, 5000);
 
 
 //Salvez rezultatele
@@ -55,6 +55,7 @@ $fis=$cale.$error;
 $text=NULL;
 $text=file_get_contents($fis); 
 $text=str_replace(ROOT."evaluator/sources/","",$text);
+
 if(!file_exists($cale.$evaluate_id))
 {
 	if($evaluate_limbaj!="pas")

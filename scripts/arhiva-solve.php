@@ -4,6 +4,8 @@
 require "config.php";
 require ROOT."scripts/user_name.php";
 require "secure.php";
+require "ClassMongoExport.php";
+require ROOT."scripts/function.evaluate.php";
 
 $first=true;
 
@@ -71,14 +73,6 @@ if($user_name!=NULL)
 		if($from=="ide")
 			file_put_contents($cale.$file_name, $arhiva_source);
 
-		
-		//compilez sursa
-		$compiler=NULL;
-		if($ext=="cpp")
-			$compiler=exec("g++ '$cale''$file_name' -o '$cale''$id'  2> '$error'");
-		if($ext=="c")
-			$compiler=exec("gcc '$cale''$file_name' -o '$cale''$id'  2> '$error'");
-
 		//limite problema
 		$timp=$k["arhiva_timp"];
 		$memorie=$k["arhiva_memorie"]+1024;
@@ -124,28 +118,17 @@ if($user_name!=NULL)
 			$out=ROOT."evaluator/arhiva/".$arhiva_nume."/outputs/".$id."-".$i.".out"; 
 			
 		
-			$evaluator=shell_exec("'$jrun_link'  --redirect-stdin '$in' --redirect-stdout '$out' --prog '$cale'/'$id' --memory-limit '$memorie' --time-limit '$timp' --block-syscalls-file='$syscalls'");
-			
+			evaluate($cale.$file_name , $cale.$id , $ext , $in , $out, $error, $memorie, $timp);
 
 			
-			if($evaluator[0]=='O' && $evaluator[1]=='K')
-				$ok=true;
+			if( strcmp($status, "Execution successful.") )
+				$ok = true;
 			else
-				$ok=false;
+				$ok = false;
 			
-			$bucati_evaluator=explode(" ", $evaluator);
-			$status=NULL;
-			for($i2=5; $i2<=10; $i2++)
-			  {
-				if(!isset($bucati_evaluator[$i2]))
-					break;
-				if(strlen($bucati_evaluator[$i2])==0)
-				   break;
-				$status=$status.$bucati_evaluator[$i2];
-				$status=$status." ";
-			}
 			if($ok==true)// daca intra in timp si memorie
 			{
+			
 				if(file_exists(ROOT."evaluator/arhiva/".$arhiva_nume."/tests/".$i.".out"))
 				{
 					//echo "out";
@@ -208,9 +191,13 @@ if($user_name!=NULL)
 		else
 			mysql_query("UPDATE `arhiva` SET `arhiva_nr_incercari` = `arhiva_nr_incercari`+1 WHERE `arhiva`.`arhiva_id` = '$arhiva_id'");
 		
+		//Update user list of problems
+		//$mongoExportObj-> jobsJsonToMongo( $mongoExportObj -> jobsToJson() );
+		//$mongoExportObj-> userProblemsJsonToMongo( $mongoExportObj -> usersListMongo() );
+
 		if($from==NULL)
 		{
-			header( 'Location: /arhiva.php?type=view&name='.$arhiva_nume);
+			//header( 'Location: /arhiva.php?type=view&name='.$arhiva_nume);
 		}
 		else
 			echo $job_total_points."#".$id;

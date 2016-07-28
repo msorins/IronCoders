@@ -8,7 +8,7 @@ class arhivaStruct{
 	public $arhiva_id;
 	public $arhiva_nume;
 	public $arhiva_adaugat_de;
-	public $arhiva_sursa;
+	public $arhiva_sursa; 
 	public $arhiva_autor;
 	public $arhiva_cerinta;
 	public $arhiva_timp;
@@ -43,6 +43,11 @@ class jobsStruct{
 	public $job_language;
 }
 
+class problemStruct{
+	public $solved = array();
+	public $tried = array();
+}
+
 class MongoExport{
 
 	public function __construct(){
@@ -58,6 +63,44 @@ class MongoExport{
 
 		if($type == "jobsToJson")
 			echo $this -> jobsToJson();
+
+		if($type =="arhivaJsonToMongo")
+			$this -> arhivaJsonToMongo( $this -> arhivaToJson() );
+
+		if($type == "jobsJsonToMongo")
+			$this -> jobsJsonToMongo( $this -> jobsToJson() );
+
+		/* To do !!
+		if($type == "newArhivaToMongo")
+			$this -> newArhivaToMongo();
+		if($type == "newJobToMongo")
+			$this -> newJobToMongo();
+		*/
+
+
+		//Returns a JSON that cointains one users solved and tried problems
+		if($type == "userProblemsToJson")
+			echo $this -> userProblemsToJson( $_GET["username"] );
+
+		//Returns a JSON object with all the usersnames
+		if($type == "usersListMongo")
+			echo $this -> usersListMongo();	
+
+		//Receive a JSON object with all the usernames and upload it to MONGO
+		if($type == "userProblemsJsonToMongo")
+			$this -> userProblemsJsonToMongo( $this -> usersListMongo() );
+
+		//Create topics in NodeBB for all existing problems ( from Mongo )
+		if($type =="arhivaToNodebbTopicALL")
+			echo $this -> arhivaToNodebbTopicALL();
+
+		//Create topic for a specific problem
+		if($type == "arhivaToNodebbTopic")
+			echo $this -> arhivaToNodebbTopic( $_GET["title"], $_GET["content"], $_GET["tags"] );
+
+		//Get the JSON to all topic content by title
+		if($type == "getNodeBBTopicContent")
+			echo $this -> getNodeBBTopicContent( $_GET["title"] );
 	}
 
 
@@ -92,8 +135,11 @@ class MongoExport{
 			return json_encode($output);
 	}
 
-	public function jobsToJson(){
-		$query = mysql_query('SELECT * FROM `jobs`');
+	public function jobsToJson($job_id){
+		if( !isset( $_GET["job_id"] ) )
+			$query = mysql_query('SELECT * FROM `jobs`');
+		else
+			$query = mysql_query('SELECT * FROM `jobs` WHERE `job_id` = `$job_id`');
 		
 		$output = array();
 		while($k = mysql_fetch_array($query))
@@ -133,6 +179,155 @@ class MongoExport{
 
 		return json_encode($output);
 	}
+
+
+	//Migrate all SQL arhiva ( problemele ) to MONGO
+	public function arhivaJsonToMongo($json){
+		$json = json_decode($json);
+
+		$m = new MongoClient();
+		$db = $m->ironcoders_MongoDB;
+
+		$db->arhiva->drop();
+		$db -> createCollection("arhiva");
+		foreach($json as $k){
+			$db->arhiva->insert($k);
+		}
+		echo 'Done';
+	}
+
+	//Migrate all SQL ( monitorul de evaluare ) to MONGO
+	public function jobsJsonToMongo($json){
+		$json = json_decode($json);
+
+		$m = new MongoClient();
+		$db = $m->ironcoders_MongoDB;
+
+		$db->jobs->drop();
+		$db->createCollection("jobs");
+		foreach($json as $k){
+			$db->jobs->insert($k);
+		}
+		echo 'Done';
+	}
+
+	public function userProblemsToJson($username)
+	{
+		if( $username == NULL )
+			return "-1";
+
+		$output = new problemStruct();
+
+		$m = new MongoClient();
+		$db = $m->ironcoders_MongoDB;
+
+		$query = $db->arhiva->find( array('arhiva_afiseaza' => '1'))->fields( array( 'arhiva_id' =>true ,'arhiva_nume' => true, 'arhiva_sursa' => true, 'arhiva_grupa' => true, '_id' => false) );
+		//$query = $db->arhiva->find( array('arhiva_afiseaza' => '1') );
+
+		foreach($query as $k){
+			// I've got the ids of all problem
+			// Now query to form the solved and unsolved problems
+			$query2 = $db->jobs->find( array('job_owner' => $username, 'job_problem_id' => $k["arhiva_id"]) );
+
+			$points = 0; $submitted = false;
+			foreach($query2 as $k2){
+				$points = max($points, $k2["job_total_points"]);
+				$submitted = true;
+			}
+
+			$k["points"] = $points;
+			if($points == 100)
+				array_push($output->solved, $k);
+			else
+				if($submitted == true)
+					array_push($output->tried, $k);
+		}
+		
+		return json_encode($output, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+		//print_r($output);
+	}
+
+	public function userProblemsJsonToMongo( $list ){
+
+		$list = json_decode( $list );
+
+		$m = new MongoClient();
+		$db = $m->ironcoders_MongoDB; 
+	
+		foreach($list as $k){
+			$pb = json_decode(  $this -> userProblemsToJson( $k -> username ) );
+			print_r($pb);
+			$id = $k->_id;
+			$id = $id->{'$id'};
+			$id = (string)$id;
+			echo $id. "   #   ";
+			$db -> objects -> update( 
+				array('_id' => new MongoId($id)), 
+				array('$set' =>  array("pb" => $pb ))
+			);
+			
+		}
+		echo "Done";
+
+	}
+
+	public function usersListMongo(){
+		$output = array();
+
+		$m = new MongoClient();
+		$db = $m->ironcoders_MongoDB;
+
+		$query = $db->objects->find( array( 'username' => array('$exists' => true ))) -> fields( array( 'username' => true ));
+
+		foreach($query as $k){
+			array_push($output, $k);
+		}
+
+		return json_encode($output);
+	}
+
+	public function arhivaToNodebbTopic($title, $content, $tags){
+		if($title == NULL || $content == NULL)
+			return -1;
+
+		require('user_name.php');
+		$str = exec("curl -H \"Authorization: Bearer 50e94fa6-76e7-41e2-b3df-2a04d98d508b\" --data \"title=".$title."&content=".$content."&cid=5\" http://localhost:4567/api/v1/topics");
+		
+		echo $str;
+
+	}
+
+	public function arhivaToNodebbTopicALL(){
+
+		$m = new MongoClient();
+		$db = $m -> ironcoders_MongoDB;
+
+		$query = $db->arhiva->find();
+
+		foreach ($query as $k) {
+			$this->arhivaToNodebbTopic($k['arhiva_nume'], 'Discutii despre problema '.$k['arhiva_nume'], 'No tags');
+		}
+
+		return "Done";
+	}
+
+	public function getNodeBBTopicContent($title){
+		if($title == NULL)
+			return -1;
+
+		$m = new MongoClient();
+		$db = $m -> ironcoders_MongoDB;
+
+		$query = $db->objects->find( array( 'title' => $title ));
+
+		foreach ($query as $k){
+			$topicslug = $k['slug'];
+		}
+
+		return file_get_contents('http://forum.ironcoders.com/api/topic/'.$topicslug);
+	}
+
+
 }
 
 $mongoExportObj = new MongoExport();

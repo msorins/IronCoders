@@ -7,8 +7,4 @@ int main()
 	cin.getline(str,100);
 	cin.getline(str2,100);
 	//Codul necesar rezolvarii o sa fie scris aici
-	if(strlen(str)>strlen(str2))
-	    cout<<"1";
-	else
-        cout<<"2";
 }

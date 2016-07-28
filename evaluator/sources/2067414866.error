@@ -1,0 +1,4 @@
+/home/ironcoders/public_html/evaluator/sources/2067414866.c: In function 'main':
+/home/ironcoders/public_html/evaluator/sources/2067414866.c:5:3: warning: format not a string literal and no format arguments [-Wformat-security]
+   fprintf(f,s);
+   ^

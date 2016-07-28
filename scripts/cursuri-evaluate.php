@@ -2,6 +2,7 @@
 <?php
 require "config.php";
 require ROOT."scripts/user_name.php";
+require ROOT."scripts/function.evaluate.php";
 error_reporting(ALL);
 require "secure.php";
 
@@ -28,44 +29,12 @@ $error= $file_name.".error";
 $file_name2=$file_name;
 $file_name.=".cpp";
 //compilez sursa
-$compiler=exec("g++ '$cale''$file_name' -o '$cale''$file_name2'  2> '$cale''$error'");
-//evaluez sursa 
-$syscalls=ROOT."evaluator/bad_syscalls";
-$evaluator=shell_exec("$jrun_link  --redirect-stdin '$cale'/'$in' --redirect-stdout '$cale'/'$out' --prog '$cale'/'$file_name2' --memory-limit 90000 --time-limit 5000 --block-syscalls-file='$syscalls'");
-	  
-$bucati_evaluator=explode(" ", $evaluator);
-$status=NULL;
-for($i=5; $i<=10; $i++)
-	{
-		if(!isset($bucati_evaluator[$i]))
-			break;
-		if(strlen($bucati_evaluator[$i])==0)
-			break;
-		$status=$status.$bucati_evaluator[$i];
-		$status=$status." ";
-	}
-$time=str_replace("ms","",$bucati_evaluator[2]); $time=(int)$time; 
-$memory=str_replace("kb:","",$bucati_evaluator[4]); $memory=(int)$memory; $memory-=1024;
-	  
-if($memory<0)
-	$memory=0;
-		
-if($compiler!=NULL)
-{
-	$errors=htmlspecialchars($compiler);
-	$errors=mysql_real_escape_string($errors);
-	$poz = strpos($errors, "error: ");  
-    $errors=str_replace("error: ","",$errors);
-	for($i=$poz; $i<=strlen($errors); $i++)
-	{
-	  if($i>=500)
-		  break;
-	  $errors2=$errors2.$errors[$i];
-	}
-	$errors=$errors2;
-}
-$fis=$cale.$error;
-$text=file_get_contents($fis); 
+	 
+
+evaluate($cale.$file_name , $cale.$file_name2 , 'cpp' , $cale.$in , $cale.$out, $cale.$error, $memorie, $timp);
+
+
+$text=file_get_contents($cale.$error); 
 $text=str_replace(ROOT."cursuri/users_code/","",$text);
 if(strlen($text)!=0)
  {
@@ -85,7 +54,15 @@ else
 	if(strpos($user_cursuri_terminate, "#".$adaugat)==NULL)
 	{
 		$user_cursuri_terminate.=$adaugat;
-		mysql_query("UPDATE `phpbb_users` SET `user_cursuri_terminate` = '$user_cursuri_terminate' WHERE `phpbb_users`.`user_id` = '$user_id';");
+		//mysql_query("UPDATE `phpbb_users` SET `user_cursuri_terminate` = '$user_cursuri_terminate' WHERE `phpbb_users`.`user_id` = '$user_id';");
+		$m = new MongoClient();
+		$db = $m->ironcoders_MongoDB;
+		$db -> objects -> update( 
+				array('uid' => $user_id), 
+				array('$set' =>  array("user_cursuri_terminate" => $user_cursuri_terminate ))
+			);
+
+	    $_SESSION["user_cursuri_terminate"] = $user_cursuri_terminate;
 	}
   }
 	  
