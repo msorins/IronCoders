@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php 
+    //Imports
 	require "scripts/config.php";
 	require ROOT."scripts/user_name.php";
 ?>
