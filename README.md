@@ -1,5 +1,5 @@
 ## IronCoders este o platforma online care faciliteaza invatarea programarii oferind unelte si resurse in acest scop.
- ##
+
 
 ![1.png](https://bitbucket.org/repo/XBzxXA/images/2300921727-1.png)
 
