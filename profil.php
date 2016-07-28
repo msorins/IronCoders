@@ -3,6 +3,12 @@ require "scripts/config.php";
 require ROOT."scripts/user_name.php";
 $user_name2=$user_name;
 $user_id2=$user_id;
+
+$user=$_GET["user"]; 
+$url =  'http://forum.ironcoders.com/user/'.$user;
+header('Location: '.$url);
+
+
 if(isset($_GET["p"]))
 	$p=secure($_GET["p"]);
 else
@@ -15,7 +21,7 @@ class profil
 	public function vedere ()
 	{
 		$user=$_GET["user"]; $user=secure($user); mysql_select_db("ironcoders_forum");
-		echo $user;
+		
 		$query=mysql_query("SELECT * FROM `phpbb_users` WHERE `username` LIKE '$user'");
 
 		if(mysql_num_rows($query)==0)

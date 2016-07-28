@@ -1,21 +1,35 @@
 <?php
-function evaluate($path, $source, $compiled_name, $language, $in, $out, $error, $memory_limit, $time_limit)
+function evaluate($source, $compiled, $language, $in, $out, $error, $memory_limit, $time_limit)
 	{
 		global $time,$memory,$status,$error;
 		
+		$source_name = explode('/', $source); $source_name = $source_name[ count($source_name) -1 ];
+		$compiled_name = explode('/', $compiled); $compiled_name = $compiled_name[ count($compiled_name) -1 ];
+		$in_name = explode('/', $in); $in_name = $in_name[ count($in_name) -1 ];
+		$out_name = explode('/', $out); $out_name = $out_name[ count($out_name) -1 ];
+		$error_name = explode('/', $error); $error_name = $error_name[ count($error_name) -1 ];
+
+		//Copiez fisierul .in de pe Host in Docker
+		$exec = "sudo docker cp ".$in." eval:/eval-folder/".$in_name;
+		exec($exec);
+
+		//Copiez fisierul .in de pe Host in Docker
+		$exec = "sudo docker cp ".$source." eval:/eval-folder/".$source_name;
+		exec($exec);
+
+
 		//compilez sursa
 		if($language=="cpp")
-			$compiler=exec("g++ '$path''$source' -o '$path''$compiled_name'  2> '$path''$error'");
+			$compiler=exec("sudo docker exec eval g++  /eval-folder/'$source_name' -o /eval-folder/'$compiled_name'  2> '$error'");
 		if($language=="c")
-			$compiler=exec("gcc '$path''$source' -o '$path''$compiled_name'  2> '$path''$error'");
+			$compiler=exec("sudo docker exec eval gcc /eval-folder/'$source_name' -o /eval-folder/'$compiled_name'  2> '$error'");
 	    if($language=="pas")
-			$compiler=exec("fpc '$path''$source'  2> '$path''$error'");
+			$compiler=exec("sudo docker exec eval fpc /eval-folder/'$source_name'  2> '$error'");
 			
 			
 		//evaluez sursa 
-		$syscalls=ROOT."evaluator/bad_syscalls";
-		$jrun_link=ROOT."evaluator/jrun";
-		$evaluator=shell_exec("'$jrun_link'  --redirect-stdin '$path'/'$in' --redirect-stdout '$path'/'$out' --prog '$path'/'$compiled_name' --memory-limit '$memory_limit' --time-limit '$time_limit' --block-syscalls-file='$syscalls'");
+		$evaluator=shell_exec("sudo docker exec eval /eval-folder/jrun  --redirect-stdin /eval-folder/'$in_name' --redirect-stdout /eval-folder/'$out_name' --prog /eval-folder/'$compiled_name' --memory-limit '$memory_limit' --time-limit '$time_limit' --no-ptrace ");
+
 			  
 		$bucati_evaluator=explode(" ", $evaluator);
 		$status=NULL;
@@ -30,7 +44,7 @@ function evaluate($path, $source, $compiled_name, $language, $in, $out, $error, 
 			}
 		$time=str_replace("ms","",$bucati_evaluator[2]); $time=(int)$time; 
 		$memory=str_replace("kb:","",$bucati_evaluator[4]); $memory=(int)$memory; $memory-=1024;
-		
+
 		if($memory<0)
 			$memory=0;
 				
@@ -49,7 +63,12 @@ function evaluate($path, $source, $compiled_name, $language, $in, $out, $error, 
 				  $errors=$errors2;
 			}
 	
-		$errors = "Execution is stopped for now :)";
-		$status = "Execution is stopped for now :)";
+		//$errors = "Execution is stopped for now :)";
+
+		//Copy the output file from Docker to host
+		exec("sudo docker cp eval:/eval-folder/".$out_name." ".$out);
+
+		//Copy the compiled file from Docker to host
+		exec("sudo docker cp eval:/eval-folder/".$compiled_name." ".$compiled);
 	}
 ?>

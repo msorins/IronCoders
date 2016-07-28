@@ -48,13 +48,13 @@
 						<?php } ?>
 					  </ul>
 					</li>
-                    <li><a href="/forum">Forum</a></li>
+                    <li><a href="http://forum.ironcoders.com">Forum</a></li>
 					<?php if ($user_name==NULL) { ?>
 					<li class="dropdown">
 					  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user" aria-hidden="true"></span><b class="caret"></b></a>
 					  <ul class="dropdown-menu">
-						<li><a href="/forum/ucp.php?mode=login">Autentificare</a></li>
-						<li><a href="/forum/ucp.php?mode=register">Înregistrare</a></li>
+						<li><a data-toggle="modal" data-target="#autentificareModal">Autentificare</an></li>
+						<li><a href="http://forum.ironcoders.com/register">Înregistrare</a></li>
 					  </ul>
 					</li>
 					<?php } else { //?>
@@ -65,6 +65,7 @@
 						<li><a href="/surse.php?type=list"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Sursele mele</a></li>
 						<li class="divider"></li>
 						<li><a href="/forum/ucp.php?i=173"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Setări</a></li>
+						<li><a href="/scripts/user_name.php?type=logout"><span class="glyphicon glyphicon-eject" aria-hidden="true"></span> Logout</a></li>
 					  </ul>
 					</li>
 					<?php } ?>
@@ -73,3 +74,30 @@
             </div>
         </div>
     </header><!--/header-->
+
+
+    <div class="modal fade" id="autentificareModal" tabindex="-99999" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Autentificare</h4>
+      </div>
+      <form action="/scripts/user_name.php" method="post" enctype="multipart/form-data" role="form">
+      <div class="modal-body">
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Nume utilizator:</label>
+            <input  style="width:65%" type="text" class="form-control" id="user_name" name="user_name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Parola:</label>
+            <input style="width:65%" type="password" class="form-control" id="user_password" name="user_password"></input>
+          </div>
+	 </div>
+	    <div class="modal-footer">
+	       <button type="submit" class="btn btn-default">Submit</button>
+      	</div>
+      </form>
+    </div>
+  </div>
+</div>

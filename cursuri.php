@@ -2,6 +2,7 @@
 <?php 
 	require_once('scripts/config.php');
 	require ROOT."scripts/user_name.php";
+
 	$user_name2=$user_name;
 	$user_cursuri_terminate2=$user_cursuri_terminate;
 	require "scripts/secure.php";
@@ -301,8 +302,8 @@ A aparut o eroare, reincarca pagina.
 					  <h3 style="text-align:center;  font-family: 'Open Sans', sans-serif; font-weight: lighter; color: #2679b5;">Trebuie să fii logat pentru a completa acest curs.</h3> <br>
 					
 					<p style="text-align:center;">
-					<a href="/forum/ucp.php?mode=login"><button type="button" class="btn btn-default btn-lg">Loghează-te</button></a>
-					<a href="/forum/ucp.php?mode=register"><button style="margin-left:10px;" type="button" class="btn btn-default btn-lg">Înregistrează-te</button></a>
+				    <button class="btn btn-default btn-lg" data-dismiss="myModal" data-toggle="modal" data-target="#autentificareModal" >Loghează-te</button>
+					<a href="http://forum.ironcoders.com/register"><button style="margin-left:10px;" type="button" class="btn btn-default btn-lg">Înregistrează-te</button></a>
 					</p>
 					</div>
 				  </div>

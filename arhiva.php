@@ -948,7 +948,13 @@ $obj=new arhiva;
 		</div>
 		<br><hr>
 		<h3> Comentarii </h3>
-		<p class="help-block"> Adauga un comentariu : <a href="/forum/posting.php?mode=reply&f=14&t=<?php echo $k["arhiva_topic_id"];?>">Click</a> ! </p> 
+		<?php
+			$topicApi = file_get_contents('http://tst.ironcoders.com/scripts/ClassMongoExport.php?type=getNodeBBTopicContent&title='.urlencode($k["arhiva_nume"]));
+			$topicApi = json_decode($topicApi);
+			$posts = $topicApi->posts;
+		
+		?>
+		<p class="help-block"> Adauga un comentariu: <a href="http://forum.ironcoders.com/topic/<?php echo $topicApi->slug;?>">Click</a> ! </p> 
 		<style>
 		.comentariu-header
 		{
@@ -967,27 +973,28 @@ $obj=new arhiva;
 			font-weight: lighter;
 			font-size:18px;
 		}
-		
 		</style>
 		<?php 
-		mysql_select_db("ironcoders_forum");
-		$id=$k["arhiva_topic_id"];
-		$query3=mysql_query("SELECT * FROM `phpbb_posts` WHERE `topic_id` = '$id' ORDER BY `post_id` DESC");
-		while($k3=mysql_fetch_array($query3))
+		foreach($posts as $k3)
 		{
 			?>
-			<div style="background-color:white" class="comentariu-header"><?php 
-			$user_id3=$k3["poster_id"];
-			$query4=mysql_query("SELECT * FROM `phpbb_users` WHERE `user_id` = '$user_id3'");
-			$k4=mysql_fetch_array($query4);
-			?><a style="margin:4px;"href="/profil.php?user=<?php echo $k4["username_clean"];?>"><?php echo $k4["username_clean"];
+			<div style="background-color:white" class="comentariu-header">
+			<a style="margin:4px;" href="http://tst.ironcoders.com/profil.php?user=<?php echo $k3->user->username; ?>"><?php echo $k3->user->username;
 			?></a></div>
 			<div class="comentariu-body">
 			<?php
-			echo $k3["post_text"];
+			echo $k3->content;
 			?></div><br><?php
 		}
 		?>
+
+		<style>
+		.emoji
+		{
+			height:20px;
+			width:20px;
+		}
+		</style>
 	 </div>
 	</div>
 	</div>
