@@ -60,7 +60,8 @@ Unele clase sunt publice, astfel toata lumea se poate inscrie, iar alte clase su
 
 Cu toate ca sursele trimise spre evaluare iti sunt salvate si pot fi accesate oricand, acest sistem iti va permite sa iti organizezi toti algoritmii scrisi astfel incat sa ii poti accesa oricand si de oriunde.
 
-Forum ##
+
+## Forum ##
 
 Tot ce tine de informatica poate fi discutat aici , orice intrebare poate fi pusa si un membru al site-ului va posta un raspuns in decursul a cateva ore.
 
