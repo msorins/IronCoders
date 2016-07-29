@@ -30,7 +30,7 @@ session_start();
    if($_GET['type']=='logout')
    {
         session_destroy();
-        header('Location: /');   
+        header('Location: /');
    }
    else
      if( isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == "true" )
@@ -60,8 +60,8 @@ session_start();
             $context  = stream_context_create($options);
             $result = file_get_contents($url, false, $context);
 
-            if ($result === FALSE) { 
-               echo "Nelogat"; 
+            if ($result === FALSE) {
+                 header('Location: /index.php?msg=loggedInvalid');    
             } else  {
                $result = (array) json_decode($result);
                $_SESSION["username"] = $result['username'];  $user_name = $result['username'];
@@ -72,20 +72,18 @@ session_start();
                $m = new MongoClient();
                $db = $m->ironcoders_MongoDB;
                $query = $db->objects->findOne( array('uid' => $user_id));
-               
+
                $user_cursuri_terminate = $query['user_cursuri_terminate'];
                $user_rang = $query["user_rang"];
-                
+
                $_SESSION["user_cursuri_terminate"] = $user_cursuri_terminate;
                $_SESSION["user_rang"] = $user_rang;
 
                echo $user_cursuri_terminate." : ".$user_rang;
 
-               echo "Logat";
-            } 
 
-
-            header('Location: /');   
+               header('Location: /');
+            }
         }
      }
 ?>

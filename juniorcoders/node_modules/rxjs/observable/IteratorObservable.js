@@ -1,24 +1,38 @@
+"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Observable_1 = require('../Observable');
 var root_1 = require('../util/root');
-var SymbolShim_1 = require('../util/SymbolShim');
+var isObject_1 = require('../util/isObject');
 var tryCatch_1 = require('../util/tryCatch');
+var Observable_1 = require('../Observable');
+var isFunction_1 = require('../util/isFunction');
+var iterator_1 = require('../symbol/iterator');
 var errorObject_1 = require('../util/errorObject');
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @extends {Ignored}
+ * @hide true
+ */
 var IteratorObservable = (function (_super) {
     __extends(IteratorObservable, _super);
     function IteratorObservable(iterator, project, thisArg, scheduler) {
         _super.call(this);
-        this.project = project;
-        this.thisArg = thisArg;
-        this.scheduler = scheduler;
         if (iterator == null) {
             throw new Error('iterator cannot be null.');
         }
-        if (project && typeof project !== 'function') {
+        if (isObject_1.isObject(project)) {
+            this.thisArg = project;
+            this.scheduler = thisArg;
+        }
+        else if (isFunction_1.isFunction(project)) {
+            this.project = project;
+            this.thisArg = thisArg;
+            this.scheduler = scheduler;
+        }
+        else if (project != null) {
             throw new Error('When provided, `project` must be a function.');
         }
         this.iterator = getIterator(iterator);
@@ -61,9 +75,9 @@ var IteratorObservable = (function (_super) {
         var index = 0;
         var _a = this, iterator = _a.iterator, project = _a.project, thisArg = _a.thisArg, scheduler = _a.scheduler;
         if (scheduler) {
-            subscriber.add(scheduler.schedule(IteratorObservable.dispatch, 0, {
+            return scheduler.schedule(IteratorObservable.dispatch, 0, {
                 index: index, thisArg: thisArg, project: project, iterator: iterator, subscriber: subscriber
-            }));
+            });
         }
         else {
             do {
@@ -90,7 +104,7 @@ var IteratorObservable = (function (_super) {
         }
     };
     return IteratorObservable;
-})(Observable_1.Observable);
+}(Observable_1.Observable));
 exports.IteratorObservable = IteratorObservable;
 var StringIterator = (function () {
     function StringIterator(str, idx, len) {
@@ -100,7 +114,7 @@ var StringIterator = (function () {
         this.idx = idx;
         this.len = len;
     }
-    StringIterator.prototype[SymbolShim_1.SymbolShim.iterator] = function () { return (this); };
+    StringIterator.prototype[iterator_1.$$iterator] = function () { return (this); };
     StringIterator.prototype.next = function () {
         return this.idx < this.len ? {
             done: false,
@@ -111,7 +125,7 @@ var StringIterator = (function () {
         };
     };
     return StringIterator;
-})();
+}());
 var ArrayIterator = (function () {
     function ArrayIterator(arr, idx, len) {
         if (idx === void 0) { idx = 0; }
@@ -120,7 +134,7 @@ var ArrayIterator = (function () {
         this.idx = idx;
         this.len = len;
     }
-    ArrayIterator.prototype[SymbolShim_1.SymbolShim.iterator] = function () { return this; };
+    ArrayIterator.prototype[iterator_1.$$iterator] = function () { return this; };
     ArrayIterator.prototype.next = function () {
         return this.idx < this.len ? {
             done: false,
@@ -131,9 +145,9 @@ var ArrayIterator = (function () {
         };
     };
     return ArrayIterator;
-})();
+}());
 function getIterator(obj) {
-    var i = obj[SymbolShim_1.SymbolShim.iterator];
+    var i = obj[iterator_1.$$iterator];
     if (!i && typeof obj === 'string') {
         return new StringIterator(obj);
     }
@@ -143,7 +157,7 @@ function getIterator(obj) {
     if (!i) {
         throw new TypeError('Object is not iterable');
     }
-    return obj[SymbolShim_1.SymbolShim.iterator]();
+    return obj[iterator_1.$$iterator]();
 }
 var maxSafeInteger = Math.pow(2, 53) - 1;
 function toLength(o) {

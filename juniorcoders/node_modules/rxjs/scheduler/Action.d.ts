@@ -1,10 +1,11 @@
 import { Subscription } from '../Subscription';
 import { Scheduler } from '../Scheduler';
-export interface Action extends Subscription<any> {
-    work: (state?: any) => void | Subscription<any>;
-    state?: any;
+export interface Action<T> extends Subscription {
+    work: (state?: T) => void | Subscription;
+    state?: T;
     delay?: number;
-    schedule(state?: any, delay?: number): any;
+    schedule(state?: T, delay?: number): void;
     execute(): void;
     scheduler: Scheduler;
+    error: any;
 }

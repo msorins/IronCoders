@@ -1,0 +1,4 @@
+/eval-folder/sorynsoo-25-4.cpp: In function 'int main()':
+/eval-folder/sorynsoo-25-4.cpp:10:1: error: expected ';' before '}' token
+ }
+ ^

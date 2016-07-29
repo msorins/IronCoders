@@ -44,7 +44,7 @@ $status=NULL; $time=NULL; $memory=NULL; $errors=NULL;
 
 
 //Tot procesul de evaluare este aici
-evaluate($cale.$file_name , $cale.$evaluate_id , $evaluate_limbaj , $cale.$in , $cale.$out, $cale.$error, 10000, 5000);
+evaluate($cale.$file_name , $cale.$evaluate_id , $evaluate_limbaj , $cale.$in , $cale.$out, $cale.$error, 10000, 5000, True);
 
 
 //Salvez rezultatele
@@ -53,7 +53,7 @@ evaluate($cale.$file_name , $cale.$evaluate_id , $evaluate_limbaj , $cale.$in , 
 //fac fisierul cu eroarea
 $fis=$cale.$error;
 $text=NULL;
-$text=file_get_contents($fis); 
+$text=file_get_contents($fis);
 $text=str_replace(ROOT."evaluator/sources/","",$text);
 
 if(!file_exists($cale.$evaluate_id))
@@ -66,10 +66,8 @@ if(!file_exists($cale.$evaluate_id))
 else
 {
 	$fis=$cale.$out;
-	$text=file_get_contents($fis); 
-	$text=ltrim($text); 
+	$text=file_get_contents($fis);
+	$text=ltrim($text);
 	$text=$text."#".$status."#".$time."#".$memory;
 	echo $text;
 }
-	  
-

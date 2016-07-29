@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php 
+<?php
     //Imports
 	require "scripts/config.php";
 	require ROOT."scripts/user_name.php";
@@ -19,7 +19,7 @@
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->       
+    <![endif]-->
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
@@ -27,6 +27,12 @@
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 <body>
+	<?php
+	if(isset($_GET["msg"]) && $_GET["msg"] == "loggedInvalid"){
+		echo "<div style=\" margin-bottom:-5px;, border-radius: 25px; \" class=\"alert alert-danger\" role=\"alert\"><b>Ops, încearcă din nou !</b></div>";
+	}
+
+	?>
     <?php include 'views/header.php'; ?>
 <script>
 document.getElementById("headerindex").style.marginTop = "-15px";
@@ -63,28 +69,28 @@ document.getElementById("headerindex").style.marginTop = "-15px";
 							<div class="col-lg-12">
 								<div class="center">
 									<h2>De ce să inveți să programezi ? </h2>
-					  
+
 								</div>
 								<div class="gap"></div>
 								<div style="margin-top:-10px;" class="row">
 									<div class="col-md-6">
 										<blockquote style="color:#E6E6E6;">
 											<p>Mintea umană iubeşte provocările. În loc să o antrenezi cu un joc de Şah sau Sudoku, poţi lucra la un proiect în domeniu web development, android development sau chiar rezolvând probleme de diferite dificultăţi.</p>
-						 
+
 										</blockquote>
 										<blockquote style="color:#E6E6E6;">
 											<p>Pentru că îţi oferă şansa să îţi pui în aplicare toate ideile și astfel poţi începe propriile proiecte care în viitor vor putea deveni afaceri de succes.</p>
-									  
+
 										</blockquote>
 									</div>
 									<div class="col-md-6">
 										<blockquote style="color:#E6E6E6;">
 											<p>Pentru că este un domeniu de viitor, aflat în continuă expansiune unde se găsesc nenumărate locuri de muncă bine plătite.<p>
-										  
+
 										</blockquote>
 										<blockquote style="color:#E6E6E6;">
 											<p>Pentru că este amuzant, în informatică nu trebuie să stai şi să toceşti o grămadă de cărţi şi cursuri pentru a putea profesa, tot ce trebuie să faci este să înveţi strictul necesar şi apoi restul va veni de la sine prin practică. </p>
-						  
+
 										</blockquote>
 									</div>
 								</div>
@@ -245,7 +251,7 @@ document.getElementById("headerindex").style.marginTop = "-15px";
                 <div class="col-md-3 col-sm-6">
                     <h4>About Us</h4>
                     <p>Acest website este înființat  din dorința de a ajuta cât mai multă lume să descopere tainele informaticii și de a forma o comunitate de oameni care împart aceiași pasiune, programarea..</p>
-              
+
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-3 col-sm-6">
@@ -288,7 +294,7 @@ document.getElementById("headerindex").style.marginTop = "-15px";
                                 <small class="muted">Postat pe 18 noiembrie 2014</small>
                             </div>
                         </div>
-                    </div>  
+                    </div>
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-3 col-sm-6">
@@ -307,13 +313,13 @@ document.getElementById("headerindex").style.marginTop = "-15px";
                         <br>
                         <b><p id="newsletter" style="display:none" class="text-success">Newsletter confirmat</p></b>
                     </form>
-					
+
 					<div id="google_translate_element"></div><script type="text/javascript">
 						function googleTranslateElementInit() {
 						  new google.translate.TranslateElement({pageLanguage: 'ro', includedLanguages: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 						}
 						</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-								
+
                 </div> <!--/.col-md-3-->
             </div>
         </div>
@@ -322,7 +328,7 @@ document.getElementById("headerindex").style.marginTop = "-15px";
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    
+
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">

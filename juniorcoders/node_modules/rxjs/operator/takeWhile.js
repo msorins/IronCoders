@@ -1,11 +1,16 @@
+"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = require('../Subscriber');
-var tryCatch_1 = require('../util/tryCatch');
-var errorObject_1 = require('../util/errorObject');
+/**
+ * @param predicate
+ * @return {Observable<R>|WebSocketSubject<T>|Observable<T>}
+ * @method takeWhile
+ * @owner Observable
+ */
 function takeWhile(predicate) {
     return this.lift(new TakeWhileOperator(predicate));
 }
@@ -14,11 +19,16 @@ var TakeWhileOperator = (function () {
     function TakeWhileOperator(predicate) {
         this.predicate = predicate;
     }
-    TakeWhileOperator.prototype.call = function (subscriber) {
-        return new TakeWhileSubscriber(subscriber, this.predicate);
+    TakeWhileOperator.prototype.call = function (subscriber, source) {
+        return source._subscribe(new TakeWhileSubscriber(subscriber, this.predicate));
     };
     return TakeWhileOperator;
-})();
+}());
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @ignore
+ * @extends {Ignored}
+ */
 var TakeWhileSubscriber = (function (_super) {
     __extends(TakeWhileSubscriber, _super);
     function TakeWhileSubscriber(destination, predicate) {
@@ -28,11 +38,19 @@ var TakeWhileSubscriber = (function (_super) {
     }
     TakeWhileSubscriber.prototype._next = function (value) {
         var destination = this.destination;
-        var result = tryCatch_1.tryCatch(this.predicate)(value, this.index++);
-        if (result == errorObject_1.errorObject) {
-            destination.error(result.e);
+        var result;
+        try {
+            result = this.predicate(value, this.index++);
         }
-        else if (Boolean(result)) {
+        catch (err) {
+            destination.error(err);
+            return;
+        }
+        this.nextOrComplete(value, result);
+    };
+    TakeWhileSubscriber.prototype.nextOrComplete = function (value, predicateResult) {
+        var destination = this.destination;
+        if (Boolean(predicateResult)) {
             destination.next(value);
         }
         else {
@@ -40,5 +58,5 @@ var TakeWhileSubscriber = (function (_super) {
         }
     };
     return TakeWhileSubscriber;
-})(Subscriber_1.Subscriber);
+}(Subscriber_1.Subscriber));
 //# sourceMappingURL=takeWhile.js.map

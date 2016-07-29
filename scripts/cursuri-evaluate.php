@@ -16,7 +16,7 @@ $k=mysql_fetch_array($query);
 
 $file_name=$user_name."-".$k["cursuri_id"]."-".$nr_lectie;
 $cale= ROOT."cursuri/users_code/";
-	 
+
  // creez fisierul.in
 file_put_contents($cale.$file_name.".in", $evaluate_input);
 
@@ -29,12 +29,12 @@ $error= $file_name.".error";
 $file_name2=$file_name;
 $file_name.=".cpp";
 //compilez sursa
-	 
-
-evaluate($cale.$file_name , $cale.$file_name2 , 'cpp' , $cale.$in , $cale.$out, $cale.$error, $memorie, $timp);
 
 
-$text=file_get_contents($cale.$error); 
+evaluate($cale.$file_name , $cale.$file_name2 , 'cpp' , $cale.$in , $cale.$out, $cale.$error, $memorie, $timp, True);
+
+
+$text=file_get_contents($cale.$error);
 $text=str_replace(ROOT."cursuri/users_code/","",$text);
 if(strlen($text)!=0)
  {
@@ -43,13 +43,13 @@ if(strlen($text)!=0)
 else
  {
 	$fis=$cale.$out;
-	$text=file_get_contents($fis); 
-	$text=ltrim($text); 
+	$text=file_get_contents($fis);
+	$text=ltrim($text);
 	require(ROOT."cursuri/submission_test/".$k["cursuri_id"]."-".$nr_lectie.".php");
-	
+
 	$rez=verificare($cpp,$text);
 	echo $rez."#".$text;
-	
+
 	$adaugat=$k["cursuri_id"]."-".$nr_lectie."#";
 	if(strpos($user_cursuri_terminate, "#".$adaugat)==NULL)
 	{
@@ -57,13 +57,13 @@ else
 		//mysql_query("UPDATE `phpbb_users` SET `user_cursuri_terminate` = '$user_cursuri_terminate' WHERE `phpbb_users`.`user_id` = '$user_id';");
 		$m = new MongoClient();
 		$db = $m->ironcoders_MongoDB;
-		$db -> objects -> update( 
-				array('uid' => $user_id), 
+		$db -> objects -> update(
+				array('uid' => $user_id),
 				array('$set' =>  array("user_cursuri_terminate" => $user_cursuri_terminate ))
 			);
 
 	    $_SESSION["user_cursuri_terminate"] = $user_cursuri_terminate;
 	}
   }
-	  
+
 ?>

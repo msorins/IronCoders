@@ -5,3 +5,4 @@
 <div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>test
 <div class="mesaj"><a href="/profil.php?user=Daniy"><span class="blue">Daniy</a> : </span>hei
 <div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>salut
+<div class="mesaj"><a href="/profil.php?user=sorynsoo"><span class="blue">sorynsoo</a> : </span>210
