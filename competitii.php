@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require "scripts/config.php";
 	require ROOT."scripts/user_name.php";
 	require "scripts/secure.php";
@@ -18,11 +18,11 @@
 	<meta name="description" content="Învață și mai multe concurând cu alți membri ai site-ului. Doboară recordurile și depășește-ți limitele avansând în clasament.">
 	<meta name="keywords" content="Informatica,Programare,C++, Probleme Informatica, Cursuri Informatica, Concursuri de programare, Probleme rezolvate, Comunitate IT, Competitii">
 	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-	
+
     <title>IronCoders - Competiţii</title>
 	<!--Bootstrap-->
     <link href="/css/bootstrap.css" rel="stylesheet">
-	
+
 	<!--Design -->
 	<link href="/css/stylesheet.css" rel="stylesheet">
 	<link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
@@ -36,7 +36,7 @@
     <link href="/css/main.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300" />
 	<link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
-	
+
 	<!--Scripts -->
 	<script src="/js/editor/ckeditor.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -47,9 +47,9 @@
 <div style="width:all; height:3px; background-color:#e7e7e7;"> </div>
 <div style="min-height:580px;">
 <div class="main-body" style="width:90%; margin-left:auto; margin-right:auto">
-<?php 
+<?php
 	if($type=="make")
-	{ 
+	{
 		if($user_name!=NULL)
 		{?>
 		<h3> Creează o competitie online </h3>
@@ -62,14 +62,14 @@
 		  <input id="competitii_nume" onchange="form_validation()" name="competitii_nume" type="text" class="form-control">
 		  <p id="adaugare_mesaj" style="display:none" class="bg-danger help-block">Numele există deja </p>
 		  <div style="height:35px;"></div>
-			
-	
+
+
 		  <label for="text">Dată începere</label>
 		  <input name="competitii_data_incepere" type="datetime-local" class="form-control"><br>
-		  
+
 		  <label for="text">Descriere </label>
 		  <textarea name="competitii_descriere" type="text" class="form-control"></textarea><br>
-	
+
 		</div>
 		<div class="col-md-6">
 		  <label for="text">Probleme</label>
@@ -77,14 +77,14 @@
 		  <p id="probleme_mesaj" style="display:none" class="bg-danger help-block">Exista o problemă invalidă</p>
 		  <p class="help-block">Problemele se delimitează de către caracterul , ( virgulă ) </p>
 
-		  
+
 		  <label for="exampleInputEmail1">Durată ( minute )</label>
 		  <input name="competitii_durata" type="number" class="form-control"><br>
-		  
+
 		  <label style="margin-top:30px;" for="text">Competiţie oficială: </label>
-		  <input <?php if($user->data['user_rang'] <3 ) echo "disabled"; ?> name="competitii_oficial" value="1" type="checkbox">
-		  <?php 
-		  if($user->data['user_rang'] <3 ) { ?>
+		  <input <?php if($user_rang <3 ) echo "disabled"; ?> name="competitii_oficial" value="1" type="checkbox">
+		  <?php
+		  if($user_rang < 3 ) { ?>
 		  <p class="help-block">Nu ai suficiente permisiuni pentru a creea o competiţie oficială. <a href="">Click</a> pentru informaţii</p>
 		  <?php } ?>
 		 </label>
@@ -110,16 +110,16 @@
 			  var rasp=xmlhttp.responseText;
 			  if(rasp==1)
 			  {
-				document.getElementById("form-submit").disabled = false; 
+				document.getElementById("form-submit").disabled = false;
 				document.getElementById("adaugare_mesaj").style.display="none";
 			  }
 			  else
 			  {
 				document.getElementById("form-submit").disabled = true;
-				document.getElementById("adaugare_mesaj").style.display="block";				
+				document.getElementById("adaugare_mesaj").style.display="block";
 			  }
 			}
-	      }	
+	      }
 		var body = "id=2&name=" + x;
 		xmlhttp.open("POST", "scripts/clase-form-validation.php", true);
 		xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -127,8 +127,8 @@
 		xmlhttp.setRequestHeader("Connection", "close");
 		xmlhttp.send(body);
 	 }
-	 
-	 
+
+
 	 function form_validation2()
 	  {
 		var x=  document.getElementById("competitii_probleme").value;
@@ -145,16 +145,16 @@
 			  var rasp=xmlhttp.responseText;
 			  if(rasp==1)
 			  {
-				document.getElementById("form-submit").disabled = false; 
+				document.getElementById("form-submit").disabled = false;
 				document.getElementById("probleme_mesaj").style.display="none";
 			  }
 			  else
 			  {
 				document.getElementById("form-submit").disabled = true;
-				document.getElementById("probleme_mesaj").style.display="block";				
+				document.getElementById("probleme_mesaj").style.display="block";
 			  }
 			}
-	      }	
+	      }
 		var body = "id=4&name=" + x;
 		xmlhttp.open("POST", "scripts/form-validation.php", true);
 		xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -172,7 +172,7 @@
 		}
 	}
 	else
-	
+
 	if($type==NULL) {
 	?>
 		<div style="height:10px;"></div>
@@ -322,26 +322,26 @@
 			{
 				if($m>=0)
 				{
-					?> <p style="margin-left:10px;"> <?php 
+					?> <p style="margin-left:10px;"> <?php
 					echo "Va incepe in ";
 					if($d>1)
 						echo $d." zile ";
 					else
 					if($d==1)
 						echo $d." zi ";
-						
+
 					if($h>=1)
 					{
 						if($d>=1)
 							echo ", ";
-						if($h>1)	
+						if($h>1)
 							echo $h." ore ";
 						else
 						if($h==1)
 							echo $h." ora ";
 					}
-		
-						
+
+
 					if($m>=1)
 					{
 						if($h>=1)
@@ -374,12 +374,12 @@
 			?>
 			<img style="float:right; margin-right:10px; margin-top:-95px; height:80px; width:100px;" src="/img/site/contest.png" class="img-responsive hidden-xs" alt="Responsive image">
 			</div>
-			
+
 			<h3> Probleme </h3>
 			<div  style="margin-top:20px;" class="table-responsive">
 			<?php
 			 if($k["competitii_status"]!="In asteptare")
-			  { 
+			  {
 			  ?>
 			  <table class="table table-striped table-bordered">
 			  <thead>
@@ -407,7 +407,7 @@
 			  ?><td><a href="profil.php?user=<?php echo $k2["arhiva_adaugat_de"]; ?>"><?php echo $k2["arhiva_adaugat_de"]; ?></a></td> <?php
 			  ?><td><?php echo $k2["arhiva_sursa"]; ?></td> <?php
 			  ?><td>
-			  <?php 
+			  <?php
 			  $id=$k2["arhiva_id"]; $competitii_nume=$k["competitii_nume"]; $pc=0;
 			  $query3=mysql_query("SELECT * FROM `jobs` WHERE `job_problem_id` = '$id' AND `job_owner` LIKE '$user_name' AND `job_contest` LIKE '$competitii_nume'" );
 			  while($k3=mysql_fetch_array($query3))
@@ -415,10 +415,10 @@
 					$pc=$k3["job_total_points"];
 			  }
 			  echo $pc;
-			  ?></td> 
+			  ?></td>
 			  </tr>
 			  <?php } ?>
-			
+
 			  </tbody>
 			</table>
 		<?php }  else { ?>
@@ -440,14 +440,14 @@
 			$k=mysql_fetch_array($query);
 			$probleme=explode(",",$k["competitii_probleme"]);
 			?><h3> Clasamentul competiţiei <a href="competitii.php?type=view&name=<?php echo $name; ?>"><?php echo $name; ?> </a></h3><hr>
-			
+
 		  <div class="table-responsive">
 		  <table class="table table-striped table-bordered">
 		  <thead>
 		  <tr>
 			  <th>#</th>
 			  <th>Nume</th>
-			  <?php 
+			  <?php
 			  for($i=0; $i<count($probleme); $i++)
 			  {
 			  ?> <th><?php echo $probleme[$i]; ?></th> <?php
@@ -457,7 +457,7 @@
 			</tr>
 		  </thead>
 		  <tbody>
-			<?php  
+			<?php
 			$query2=mysql_query("SELECT * FROM `jobs` WHERE `job_contest` LIKE '$name'");
 			//populez userii si numarul de puncte luate la fiecare problema & nr de puncte total
 			$puncte_total_aux=NULL; $puncte_total=NULL; $puncte=NULL; $user=NULL; $nr_user=0;
@@ -503,7 +503,7 @@
 						$aux=$puncte_total_aux[$i];
 						$puncte_total_aux[$i]=$puncte_total_aux[$j];
 						$puncte_total_aux[$j]=$aux;
-						
+
 						$aux=$sort[$i];
 						$sort[$i]=$sort[$j];
 						$sort[$j]=$aux;
@@ -515,13 +515,13 @@
 			  ?>
 			  <tr><td><?php echo $i+1; ?> </td>
 			  <td><a href=""><?php echo $user[$sort[$i]]; ?></a></td> <?php
-	
+
 			  for($j=0; $j<count($probleme); $j++)
 			  {
-			   ?> <td><?php if($puncte[$sort[$i]][$j]==NULL) echo "0"; else echo $puncte[$sort[$i]][$j]; ?> </td><?php 
+			   ?> <td><?php if($puncte[$sort[$i]][$j]==NULL) echo "0"; else echo $puncte[$sort[$i]][$j]; ?> </td><?php
 			  }
 			  ?><td><?php echo $puncte_total[$sort[$i]]; ?></td>
-			  
+
 			  </tr> <?php
 			}
 			?>

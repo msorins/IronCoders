@@ -1,0 +1,11 @@
+{
+
+	"title": "Quest Manager",
+
+	"dependencies": [
+		"./plugins/quest-manager-1.0.0.min.js"
+	],
+
+	"tab": "Plugins"
+
+}

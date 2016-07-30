@@ -1,1 +1,0 @@
-<?php if (!defined('IN_PHPBB')) exit; $this->_tpldata['DEFINE']['.']['CUSTOM_NAVIGATION_TYPE'] = 1; $this->_tpldata['DEFINE']['.']['CUSTOM_NAVIGATION'] = 1; $this->_tpldata['DEFINE']['.']['CUSTOM_FOOTER'] = 3; $this->_tpldata['DEFINE']['.']['CUSTOM_FOOTER_BLOCKS'] = 1; $this->_tpldata['DEFINE']['.']['CUSTOM_SIDEBAR'] = 0; ?>

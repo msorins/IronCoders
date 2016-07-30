@@ -1,0 +1,7 @@
+AuthName "junior.ironcoders.com statistics"
+AuthType Basic
+AuthUserFile /home/ironcoders/domains/junior.ironcoders.com/.stats-htpasswd
+require valid-user
+<Files .stats-htpasswd>
+deny from all
+</Files>

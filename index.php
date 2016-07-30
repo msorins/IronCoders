@@ -266,9 +266,7 @@ document.getElementById("headerindex").style.marginTop = "-15px";
                             <li><a href="/clase.php">Clase virtuale</a></li>
                             <li><a href="/resurse.php">Resurse</a></li>
                             <li><a href="/monitor.php">Monitorul de evaluare</a></li>
-                            <li><a href="/forums">Forum</a></li>
-                            <li><a href="/blog">Blog</a></li>
-
+                            <li><a href="forum.ironcoders.com">Forum</a></li>
                         </ul>
                     </div>
                 </div><!--/.col-md-3-->
@@ -281,8 +279,8 @@ document.getElementById("headerindex").style.marginTop = "-15px";
                                 <img src="images/blog/thumb1.jpg" alt="">
                             </div>
                             <div class="media-body">
-                                <span class="media-heading"><a href="/blog/116/">Analiza complexității unui algoritm</a></span>
-                                <small class="muted">Postat pe 21 noiembrie 2014</small>
+                                <span class="media-heading"><a href="http://forum.ironcoders.com/topic/195/analiza-complexit%C4%83%C8%9Bii-unui-algoritm">Analiza complexității unui algoritm</a></span>
+                                <small class="muted">Postat pe 30 Iulie 2016</small>
                             </div>
                         </div>
                         <div class="media">
@@ -290,8 +288,8 @@ document.getElementById("headerindex").style.marginTop = "-15px";
                                 <img src="images/blog/thumb2.jpg" alt="">
                             </div>
                             <div class="media-body">
-                                <span class="media-heading"><a href="/blog/prezentare-ironcoders/">Prezentarea platformei</a></span>
-                                <small class="muted">Postat pe 18 noiembrie 2014</small>
+                                <span class="media-heading"><a href="/blog/prezentare-ironcoders/">http://forum.ironcoders.com/topic/196/prezentarea-platformei</a></span>
+                                <small class="muted">Postat pe 30 Iulie 2016</small>
                             </div>
                         </div>
                     </div>
@@ -333,7 +331,7 @@ document.getElementById("headerindex").style.marginTop = "-15px";
                 <div class="col-sm-6">
                     <ul class="pull-right">
                         <li><a href="/">Acasa</a></li>
-                        <li><a href="/blog/despre-mine/">Despre mine</a></li>
+                        <li><a href="https://mirceasorin.ro">Despre mine</a></li>
                         <li><a href="www.mesota.ro">Mesota.ro</a></li>
                         <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a></li><!--#gototop-->
                     </ul>

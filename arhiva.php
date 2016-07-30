@@ -8,7 +8,7 @@ if(isset($_GET["p"]))
 	$p=secure($_GET["p"]);
 else
 	$p=1;
-	
+
 class arhiva
 {
 	private $user_name;
@@ -81,7 +81,7 @@ class arhiva
       </tbody>
     </table>
 	</div>
-	<?php 
+	<?php
 	}
 	public function make()
 	{
@@ -107,7 +107,7 @@ class arhiva
 		  <input  name="arhiva_autor" type="text" class="form-control" placeholder="Nume autor"><br>
 	   </div>
 
-	  
+
 	  <div class="col-md-12">
 		 <label style="">Cerinţă problemă</label>
 		  <textarea name="arhiva_cerinta"id="editor1" rows="10" cols="80">
@@ -120,15 +120,15 @@ class arhiva
 		  </script>
 	  </div>
 		  <br>
-		  
+
 	   <div class="col-md-6">
 
 		  <label for="text">Limită timp</label>
 		  <input name="arhiva_timp" type="text" class="form-control" placeholder="ms"><br>
-			  
+
 		  <label for="text">Limită memorie</label>
 		  <input  name="arhiva_memorie" type="text" class="form-control" placeholder="kbytes"><br>
-			  
+
 	  </div>
 	  <div class="col-md-6">
 		  <label for="exampleInputEmail1">Grupă</label>
@@ -138,18 +138,18 @@ class arhiva
 			  <option value="Mare">Mare</option>
 			  <option value="Toate">Toate</option>
 		  </select><br>
-		  
+
 		  <div class="form-group">
 			<label for="exampleInputFile">Teste</label>
 			<input name="upload[]" type="file" multiple="multiple" type="file" id="exampleInputFile">
 			<p class="help-block">Testele sunt de forma "0.in", "0.ok", "1.in", "1.ok"...etc</p>
 			</div>
-		  
+
 	  </div>
 	  <div style="margin-top:-20px;" class="col-md-6">
 	  <label for="exampleInputFile">Categorii:</label>
 		<select name="arhiva_categorii[]" multiple class="form-control">
-		<?php 
+		<?php
 		$query=mysql_query("SELECT * FROM `arhiva_categorii`");
 		while($k=mysql_fetch_array($query))
 		{
@@ -162,7 +162,7 @@ class arhiva
 	  <div style="margin-top:-20px;" class="col-md-6">
 	   <label style="margin-top:30px;" for="text">Afișare în lista de probleme: </label>
 		  <input <?php if($this->user_rang <3 ) echo "disabled"; ?> name="arhiva_afiseaza2" value="1" type="checkbox">
-		  <?php 
+		  <?php
 		  if($this->user_rang < 3 ) { ?>
 		  <p class="help-block">Problema va fi afișată în listă doar după ce este verificată de către un moderator.</p>
 		  <?php } ?>
@@ -190,16 +190,16 @@ class arhiva
 			  var rasp=xmlhttp.responseText;
 			  if(rasp==1)
 			  {
-				document.getElementById("form-submit").disabled = false; 
+				document.getElementById("form-submit").disabled = false;
 				document.getElementById("adaugare_mesaj").style.display="none";
 			  }
 			  else
 			  {
 				document.getElementById("form-submit").disabled = true;
-				document.getElementById("adaugare_mesaj").style.display="block";				
+				document.getElementById("adaugare_mesaj").style.display="block";
 			  }
 			}
-	      }	
+	      }
 		var body = "id=1&name=" + x;
 		xmlhttp.open("POST", "scripts/form-validation.php", true);
 		xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -210,9 +210,9 @@ class arhiva
 	  </script>
 	<?php
 	}
-	
-	// LIMITARE 
-	
+
+	// LIMITARE
+
 	public function nerezolvate()
 	{
 	  $this->cap_tabel();
@@ -252,7 +252,7 @@ class arhiva
 	</div>
 	<?php
 	}
-	
+
 	public function incercate()
 	{
 	  $this->cap_tabel();
@@ -289,7 +289,7 @@ class arhiva
 	</div>
 	<?php
 	}
-	
+
 	public function rezolvate()
 	{
 	  $this->cap_tabel();
@@ -325,7 +325,7 @@ class arhiva
 	</div>
 	<?php
 	}
-	
+
 	public function cele_mai_grele()
 	{
 	   $this->cap_tabel();
@@ -358,7 +358,7 @@ class arhiva
 	</div>
 	<?php
 	}
-	
+
 	public function search()
 	{
 	?>
@@ -378,7 +378,7 @@ class arhiva
 		<td> <a href="/profil.php?user=<?php echo $k["arhiva_autor"]; ?>"> <?php echo $k["arhiva_autor"]; ?> </a> </td>
 		<td> <?php echo $k["arhiva_sursa"];?> </td>
 		<td> <?php echo $k["arhiva_grupa"]; ?> </td>
-		<td> <?php 
+		<td> <?php
 		$id=$k["arhiva_id"]; $pc=0;
 		$user_name=$this->user_name;
 		if($user_name!=NULL)
@@ -407,16 +407,16 @@ class arhiva
 	</div>
 	<?php
 	}
-	
+
 	public function search_category()
 	{
 	$name=$this->name;
 	?>
 	<h3><?php echo $name; ?></h3>
-	<p class="help-block"><?php  
+	<p class="help-block"><?php
 	$q=mysql_query("SELECT * FROM `arhiva_categorii` WHERE `arhiva_categorii_nume` LIKE '$name'");
 	$k=mysql_fetch_array($q);
-	echo $k["arhiva_categorii_descriere"]; 
+	echo $k["arhiva_categorii_descriere"];
 	?>
 	</p>
 	<hr><br>
@@ -455,7 +455,7 @@ class arhiva
 	</div>
 	<?php
 	}
-	
+
 	public function arhiva_educationala()
 	{
 	?>
@@ -463,7 +463,7 @@ class arhiva
 
 	  <?php
 	  $this->cap_tabel();
-	  //Arhiva Educationala 
+	  //Arhiva Educationala
 	  $query=mysql_query("SELECT * FROM `arhiva` WHERE `arhiva_concurs` LIKE 'arhiva-educationala' AND `arhiva_afiseaza` = 1 ORDER BY `arhiva`.`arhiva_grupa` DESC") or die (mysql_error()); $nr=0;
 	  while($k=mysql_fetch_array($query))
 	  {
@@ -528,7 +528,7 @@ $obj=new arhiva;
 		echo "IronCoders - ".$tt;
 	}
 	else
-	{ 
+	{
 	if(isset($_GET["type"]) && secure($_GET["type"])=="arhiva-educationala")
 		 echo "IronCoders - Arhivă educatională de probleme";
 	else
@@ -540,10 +540,10 @@ $obj=new arhiva;
 	<meta name="description" content="Listă cu probleme de informatică date la olimpiade și concursuri școlare sau probleme rezolvate cu scop educațional.">
 	<meta name="keywords" content="Informatica,Programare,C++, Probleme Informatica, Cursuri Informatica, Probleme rezolvate, Comunitate IT">
 	<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-	
+
 	<!--Bootstrap-->
     <link href="/css/bootstrap.css" rel="stylesheet">
-	
+
 	<!--Design -->
 	<link href="/css/stylesheet.css" rel="stylesheet">
 	<link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
@@ -557,21 +557,21 @@ $obj=new arhiva;
     <link href="/css/main.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300" />
 	<link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
-	
+
 	<!--Scripts -->
 	<script src="/js/editor/ckeditor.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	
+
   </head>
   <body>
   <?php include 'views/header.php'; ?>
   <img style="width:100%; margin-top:-20px;" src="/img/site/programming.png" class="img-responsive" alt="Responsive image">
   <div class="main-body" style="width:90%; margin-left:auto; margin-right:auto; min-height:600px;">
-  
+
   <?php $type=NULL;
   if(isset($_GET["type"]))
 	$type=secure($_GET["type"]);
-	if($type!="view") 
+	if($type!="view")
 	{
 	?>
     <div style="height:10px;"></div>
@@ -589,7 +589,7 @@ $obj=new arhiva;
 	</script>
 	</span>
 	<?php } ?>
-  <?php 
+  <?php
   if(isset($_GET["type"]))
 	$type=secure($_GET["type"]);
   else
@@ -600,10 +600,10 @@ $obj=new arhiva;
   $obj->set_user_rang($user_rang2);
 	if($obj->is_user_logged())
 		$obj->make();
-  } 
+  }
   if($type==NULL)
 	  //FARA TYPE, PAGINA DEFAULT DIN ARHIVA
-{  
+{
 		?>
 		<div>
 		 <h3>Arhivă probleme </h3>
@@ -633,7 +633,7 @@ $obj=new arhiva;
 			  <li class=""><a onclick="sterge_pager()" href="#profile1" data-toggle="tab">Nerezolvate</a></li>
 			  <li class=""><a onclick="sterge_pager()" href="#profile2" data-toggle="tab">Încercate</a></li>
 			  <li class=""><a onclick="sterge_pager()" href="#profile3" data-toggle="tab">Rezolvate</a></li>
-			  
+
 			  <li class="dropdown">
 				<a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">Mai multe opţiuni<b class="caret"></b></a>
 				<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
@@ -644,13 +644,13 @@ $obj=new arhiva;
 		 </ul>
 		<div id="myTabContent" class="tab-content">
 		  <div class="tab-pane fade active in" id="home">
-		  <?php 
+		  <?php
 		  $obj->p=$p;
 		  $obj->set_user_name($user_name2);
 		  $obj->home();
 		  ?>
 		 </div>
-		  
+
 		  <div class="tab-pane fade1" id="profile1">
 			  <?php
 			   $obj->set_user_name($user_name2);
@@ -659,7 +659,7 @@ $obj=new arhiva;
 			   ?>
 		  </div>
 		 <div class="tab-pane fade1" id="profile2">
-			 <?php 
+			 <?php
 			  $obj->set_user_name($user_name2);
 			  if($obj->is_user_logged())
 				 $obj->incercate();
@@ -689,7 +689,7 @@ $obj=new arhiva;
 			  <div class="form-group">
 				<label for="inputEmail3" class="control-label">Categorie</label>
 				<select name="name" class="form-control">
-				<?php 
+				<?php
 				$query=mysql_query("SELECT * FROM `arhiva_categorii`");
 				while($k2=mysql_fetch_array($query))
 				{
@@ -708,8 +708,8 @@ $obj=new arhiva;
 			$obj->cele_mai_grele();
 		  ?>
 		  </div>
-		  
-		  
+
+
 		</div>
 
 	  </div>
@@ -718,8 +718,8 @@ $obj=new arhiva;
 			  <li><a href="/arhiva.php?p=<?php if ($nr > ($p*50)) echo $next; else echo $p; ?>">Pagina urmatoare </a></li>
 	 </ul>
 		<br><br><br>
-		
-<?php } 
+
+<?php }
 	else if($type=="view")
 	{
 	//VEDERE PROBLEMA !!!
@@ -803,8 +803,8 @@ $obj=new arhiva;
 	<tr>
       <td><a href="<?php echo $out; ?>" download><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> Primul test greşit (output)</a></td>
     </tr>
-	
-	
+
+
 	<?php } ?>
 		<tr>
           <td><span class="glyphicon glyphicon-play" aria-hidden="true"></span> <a href="/ide.php?name=<?php echo $k["arhiva_nume"]; ?>">Compilator online</td>
@@ -864,7 +864,7 @@ $obj=new arhiva;
 	</div>
 		 <hr>
 		 <form action="/scripts/arhiva-solve.php?arhiva_nume=<?php echo $k["arhiva_nume"];?>&arhiva_id=<?php echo $k["arhiva_id"]?>" method="post" enctype="multipart/form-data" role="form" >
-		 
+
 		 <div class="row">
 		 <h3 style="margin-left:12px;"> Trimite o solutie</h3>
 		 <div class="col-md-4 col-xs-12">
@@ -875,7 +875,7 @@ $obj=new arhiva;
 		 <div class="col-md-3 col-xs-6">
 			  <select name="job_contest" class="form-control">
 			<option  selected value="Arhiva<?php if($k["arhiva_concurs"]=="arhiva-educationala") echo" educatională"; ?>">Arhivă<?php if($k["arhiva_concurs"]=="arhiva-educationala") echo" educatională"; ?></option>
-			 
+
 			  <?php
 			  $str="In desfasurare";
 			  $query2=mysql_query("SELECT * FROM `competitii` WHERE `competitii_status` LIKE '$str'");
@@ -891,7 +891,7 @@ $obj=new arhiva;
 					}
 				}
 			  }
-			  
+
 			  $query2=mysql_query("SELECT * FROM `clase`");
 			  while($k2=mysql_fetch_array($query2))
 			  {
@@ -912,9 +912,9 @@ $obj=new arhiva;
 			  <p class="help-block">Selectează runda</p>
 		 </div>
 		 <div class="col-md-4 col-xs-6">
-			 <button style="float:right;" <?php if($user_name2==NULL) echo "disabled"; ?> type="submit" class="btn btn-default" id="arhiva_evalueaza_buton" data-loading-text="Se evaluează..." >Evaluează <span class="glyphicon glyphicon-send" aria-hidden="true"></span></button> 
+			 <button style="float:right;" <?php if($user_name2==NULL) echo "disabled"; ?> type="submit" class="btn btn-default" id="arhiva_evalueaza_buton" data-loading-text="Se evaluează..." >Evaluează <span class="glyphicon glyphicon-send" aria-hidden="true"></span></button>
 			 <?php if($user_name2==NULL) { ?>
-			 <p class="help-block">Trebuie să fii logat pentru a trimite surse </p> 
+			 <p class="help-block">Trebuie să fii logat pentru a trimite surse </p>
 			 <?php } ?>
 			 <script>
 			 $(document).ready(function(){
@@ -926,12 +926,12 @@ $obj=new arhiva;
 			</script>
 		 </div>
 		 </div>
-		 </form> 
+		 </form>
 		 <hr>
 		<h3> Indicații rezolvare </h3>
 
 		<div style="background-color: white; border: 1px solid #ccc; padding:10px; margin-top:5px;">
-		<?php $categorii=explode(",",$k["arhiva_categorii"]); 
+		<?php $categorii=explode(",",$k["arhiva_categorii"]);
 		for($i=1; $i<count($categorii); $i++)
 			{
 			  ?><a href="/arhiva.php?type=search_category&name=<?php echo str_replace(" ", "+",$categorii[$i]); ?>"><?php echo $categorii[$i]; ?></a><?php
@@ -949,16 +949,16 @@ $obj=new arhiva;
 		<br><hr>
 		<h3> Comentarii </h3>
 		<?php
-			$topicApi = file_get_contents('http://tst.ironcoders.com/scripts/ClassMongoExport.php?type=getNodeBBTopicContent&title='.urlencode($k["arhiva_nume"]));
+			$topicApi = file_get_contents('http://ironcoders.com/scripts/ClassMongoExport.php?type=getNodeBBTopicContent&title='.urlencode($k["arhiva_nume"]));
 			$topicApi = json_decode($topicApi);
 			$posts = $topicApi->posts;
-		
+
 		?>
-		<p class="help-block"> Adauga un comentariu: <a href="http://forum.ironcoders.com/topic/<?php echo $topicApi->slug;?>">Click</a> ! </p> 
+		<p class="help-block"> Adauga un comentariu: <a href="http://forum.ironcoders.com/topic/<?php echo $topicApi->slug;?>">Click</a> ! </p>
 		<style>
 		.comentariu-header
 		{
-			background-color: #f5f5f5; 
+			background-color: #f5f5f5;
 			border: 1px solid #ccc;
 			padding: .2em;
 			-moz-border-radius: 5px;
@@ -967,14 +967,14 @@ $obj=new arhiva;
 		}
 		.comentariu-body
 		{
-			margin-left:8px; 
-			margin-top:3px; 
+			margin-left:8px;
+			margin-top:3px;
 			font-family: 'Open Sans', sans-serif;
 			font-weight: lighter;
 			font-size:18px;
 		}
 		</style>
-		<?php 
+		<?php
 		foreach($posts as $k3)
 		{
 			?>
@@ -1000,22 +1000,22 @@ $obj=new arhiva;
 	</div>
 	<?php }
 	}
-	else 
+	else
 	{
 	?>
 	<h3> Nu există nicio problemă cu acest nume </h3>
 	<?php
 	}
-	
-	} 
-	if($type=="search_category") 
+
+	}
+	if($type=="search_category")
 	{
 		$obj->set_user_name($user_name2);
 		$obj->name=secure($_GET["name"]);
 		$obj->search_category();
 	}
-	if($type=="arhiva-educationala") 
-	{ 
+	if($type=="arhiva-educationala")
+	{
 		?>
 		<div class="tab-pane fade1" id="profile3">
 		<?php
@@ -1057,15 +1057,15 @@ $obj=new arhiva;
 		<form action="/scripts/arhiva-edit.php?type=1&arhiva_id=<?php echo $k["arhiva_id"]; ?>&arhiva_nume=<?php echo $k["arhiva_nume"];?>" method="post" enctype="multipart/form-data" role="form">
 		<br><br>
 		<div class="row">
-			<div class="col-md-6"> 
+			<div class="col-md-6">
 				<label for="exampleInputEmail1">Limită timp ( ms )</label>
 				<input name="arhiva_timp" class="form-control" value="<?php echo $k["arhiva_timp"];?>">
 			</div>
-			<div class="col-md-6"> 
+			<div class="col-md-6">
 				<label for="exampleInputEmail1">Limită memorie ( kbytes )</label>
 				<input name="arhiva_memorie" class="form-control"  value="<?php echo $k["arhiva_memorie"];?>">
 			</div>
-			
+
 			<div style="margin-top:15px;" class="col-md-12 col-xs-12">
 				 <label style="">Cerință problemă</label>
 				  <textarea name="arhiva_cerinta"id="editor1" rows="10" cols="80">
@@ -1077,17 +1077,17 @@ $obj=new arhiva;
 				  CKEDITOR.replace( 'editor1' );
 				  </script>
 			</div>
-			<div style="margin-top:15px;" class="col-md-6 col-xs-6"> 
+			<div style="margin-top:15px;" class="col-md-6 col-xs-6">
 				<label for="exampleInputEmail1">Autor:</label>
 				<input name="arhiva_autor" class="form-control" id="exampleInputEmail1" value="<?php echo $k["arhiva_autor"];?>">
 			</div>
-			
-			<div style="margin-top:15px;" class="col-md-6 col-xs-6"> 
+
+			<div style="margin-top:15px;" class="col-md-6 col-xs-6">
 				<label for="exampleInputEmail1">Sursă:</label>
 				<input name="arhiva_sursa" class="form-control" id="exampleInputEmail1" value="<?php echo $k["arhiva_sursa"];?>">
 			</div>
-			
-			<div style="margin-top:15px;" class="col-md-6 col-xs-6"> 
+
+			<div style="margin-top:15px;" class="col-md-6 col-xs-6">
 				<label for="exampleInputEmail1">Grupă</label>
 			  <select name="arhiva_grupa" class="form-control">
 				  <option <?php if($k["arhiva_grupa"] =="Mica") echo "selected"; ?> >Mică</option>
@@ -1096,11 +1096,11 @@ $obj=new arhiva;
 				  <option <?php if($k["arhiva_grupa"] =="Toate") echo "selected"; ?>>Toate</option>
 			  </select>
 			</div>
-			
-			<div style="margin-top:15px;" class="col-md-6 col-xs-6"> 
+
+			<div style="margin-top:15px;" class="col-md-6 col-xs-6">
 			<label for="exampleInputFile">Categorii:</label>
 			<select name="arhiva_categorii[]" multiple class="form-control">
-			<?php 
+			<?php
 			$query=mysql_query("SELECT * FROM `arhiva_categorii`");
 			while($k2=mysql_fetch_array($query))
 			{
@@ -1112,7 +1112,7 @@ $obj=new arhiva;
 			<div style="margin-top:-30px;" class="col-md-6">
 			<label  for="text">Arhivă educatională: </label>
 			<input <?php if($k["arhiva_concurs"]=="arhiva-educationala") echo "checked"; ?> value="arhiva-educationala" name="arhiva_concurs" type="checkbox" id="inlineCheckbox1" value="option1">
-			
+
 			<br>
 			  <label  for="text">Afișare în lista de probleme: </label>
 			  <input <?php if($k["arhiva_afiseaza"]==1) echo "checked"; ?> name="arhiva_afiseaza2" value="1" type="checkbox">
@@ -1157,7 +1157,7 @@ $obj=new arhiva;
 			  </td>
 			  <td><a href="/scripts/arhiva-edit.php?type=3&name=<?php echo $k; ?>&arhiva_nume=<?php echo $problem_name; ?>">Șterge </a> / <a href="<?php echo "/evaluator/arhiva/".$problem_name."/tests/".$k ?>" download="<?php echo $k; ?>">Descarcă</a> </td>
 			</tr>
-			 <?php 
+			 <?php
 			 $i++;
 			}
 		}
@@ -1194,9 +1194,9 @@ else
 <?php
 echo htmlspecialchars($fisier);
 ?>
-</pre> 
-<button onclick="editeaza_script_corectare()" id="trimite-script" type="submit" class="btn btn-default">Trimite</button> 
-<a href="scripts/arhiva-edit.php?type=6&arhiva_nume=<?php echo $problem_name; ?>"> <button type="submit" class="btn btn-default">Sterge</button> 
+</pre>
+<button onclick="editeaza_script_corectare()" id="trimite-script" type="submit" class="btn btn-default">Trimite</button>
+<a href="scripts/arhiva-edit.php?type=6&arhiva_nume=<?php echo $problem_name; ?>"> <button type="submit" class="btn btn-default">Sterge</button>
 <br><br>
 	<?php
 		}
@@ -1218,7 +1218,7 @@ echo htmlspecialchars($fisier);
  {
 	link = document.getElementById('pager');
 	link.style.display = 'block';
-	
+
 	link = document.getElementById('pager2');
 	link.style.display = 'block';
  }
@@ -1226,7 +1226,7 @@ echo htmlspecialchars($fisier);
  {
 	link = document.getElementById('pager');
 	link.style.display = 'none';
-	
+
 	link = document.getElementById('pager2');
 	link.style.display = 'none';
  }
@@ -1263,12 +1263,12 @@ echo htmlspecialchars($fisier);
 		{
 		document.getElementById("trimite-script").innerHTML = "Trimite";
 		}
-	} 
+	}
 	var body = "type=5" + "&script="+ encodeURIComponent(editor.getValue())+"&arhiva_nume="+getURLParameter("name");
 	xmlhttp.open("POST", "scripts/arhiva-edit.php", true);
 	xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	xmlhttp.send(body);
-	
+
 
 }
  </script>
