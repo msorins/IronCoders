@@ -175,11 +175,6 @@ if($user_name!=NULL)
 			else
 				$job_tests_points=$job_tests_points."0#";
 
-			$time=str_replace("ms","",$bucati_evaluator[2]); $time=(int)$time;
-			$memory=str_replace("kb:","",$bucati_evaluator[4]); $memory=(int)$memory;
-			if($memory>=1024)
-			$memory-=1024;
-
 			$job_tests_time=$job_tests_time.$time."#";
 			$job_tests_memory=$job_tests_memory.$memory."#";
 			$job_tests_message=$job_tests_message.$status."#";

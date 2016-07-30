@@ -47,7 +47,7 @@ function evaluate($source, $compiled, $language, $in, $out, $errorP, $memory_lim
 				$status=$status." ";
 			}
 		$time=str_replace("ms","",$bucati_evaluator[2]); $time=(int)$time;
-		$memory=str_replace("kb:","",$bucati_evaluator[4]); $memory=(int)$memory; $memory-=1024;
+		$memory=str_replace("kb:","",$bucati_evaluator[4]); $memory=(int)$memory; //$memory-=1024;
 
 		if($memory<0)
 			$memory=0;
