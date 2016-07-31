@@ -1,0 +1,4 @@
+/eval-folder/1128520259.cpp: In function 'int main()':
+/eval-folder/1128520259.cpp:6:5: error: 'b' was not declared in this scope
+     b = 3;
+     ^

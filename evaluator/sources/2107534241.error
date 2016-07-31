@@ -1,0 +1,4 @@
+/eval-folder/2107534241.cpp: In function 'int main()':
+/eval-folder/2107534241.cpp:6:1: error: expected ';' before '}' token
+ }
+ ^

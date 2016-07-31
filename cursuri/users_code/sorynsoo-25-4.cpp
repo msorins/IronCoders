@@ -6,5 +6,5 @@ int main()
 {
    cin.getline(str,100);
    strncpy(str2,str,10);
-   cout<<str2
+   cout<<str2;
 }

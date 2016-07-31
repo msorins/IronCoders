@@ -1,0 +1,4 @@
+/eval-folder/766.cpp: In function 'int main()':
+/eval-folder/766.cpp:8:5: error: expected ';' before 'return'
+     return 0;
+     ^

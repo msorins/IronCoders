@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php 
+<?php
 require "scripts/config.php";
 require "scripts/secure.php";
 require ROOT."scripts/user_name.php";
@@ -14,7 +14,7 @@ else
 class ide
 {
 	private $problem_name;
-	
+
 	public function normal_header()
 	{
 		?>
@@ -26,7 +26,7 @@ class ide
 			<option value="pas">Pascal</option>
 		  </select>
 		  <p id="info" style="margin-top:10px; font-size:15px; font-weight: lighter; display:none;">Timp executie <span style="color: #2679b5;" id="timp">x</span> ms . Memorie folosita <span style="color: #2679b5;" id="memorie">x</span> kb</p>
-		  
+
 		  </div>
 		  <div class="col-md-4 col-xs-4"><h2 style="font-size:20px; font-family: 'Open Sans', sans-serif; font-weight: lighter; color: #2679b5;"> Input</h2>
 		   <textarea class="form-control" name="input" id="input" style="resize: none; width:90%" ></textarea>
@@ -40,10 +40,10 @@ class ide
 		</div>
 		<?php
 	}
-	
+
 	public function solve_problem_header()
 	{
-		
+
 		?>
 		<div class="center-block" style="min-width:920px; margin-top:-10px; " class="row">
 		  <div class="col-md-3 col-xs-3"> <h2 style="font-size:20px; font-family: 'Open Sans', sans-serif; font-weight: lighter; color: #2679b5;"> Selectare limbaj</h2>
@@ -52,7 +52,7 @@ class ide
 			<option value="c">C</option>
 		  </select>
 		  <p id="info2" style="margin-top:10px; font-size:15px; font-weight: lighter;">Punctaj: <span style="color: #2679b5;" id="punctaj"> ? </span> <span id="raport_evaluare">   . Evaluează sursa</span></p>
-		  
+
 		  </div>
 		  <div class="col-md-3 col-xs-3"><h2 style="font-size:20px; font-family: 'Open Sans', sans-serif; font-weight: lighter; color: #2679b5;"> Problemă</h2>
 		   <select onchange="ide_runda()" class="form-control" name="ide_problem_name" id="ide_problem_name"  style="margin-left:4px;">
@@ -69,7 +69,7 @@ class ide
 		  </div>
 		  <div class="col-md-4 col-xs-4"> <h2 style="font-size:20px; font-family: 'Open Sans', sans-serif; font-weight: lighter; color: #2679b5;"> Selectare rundă</h2>
 			  <select style="margin-top:0px;"  id="arhiva_runda" name="arhiva_runda" class="form-control">
-				
+
 			  </select>
 		 </div>
 		  <div class="col-md-2 col-xs-2">
@@ -78,7 +78,7 @@ class ide
 		</div>
 		<?php
 	}
-	
+
 	public function set_problem_name($name)
 		{
 			$this->problem_name=$name;
@@ -100,8 +100,8 @@ class ide
     body {
         overflow: hidden;
     }
-    
-    #editor { 
+
+    #editor {
         margin: 0;
         position: absolute;
         top: 0;
@@ -123,7 +123,7 @@ class ide
   </style>
   <!--Bootstrap-->
     <link href="/css/bootstrap.css" rel="stylesheet">
-	
+
 	<!--Design -->
 	<link href="/css/stylesheet.css" rel="stylesheet">
 	<link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
@@ -137,7 +137,7 @@ class ide
     <link href="/css/main.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300" />
 	<link href="/img/favicon.ico" rel="icon" type="image/x-icon" />
-	
+
 	<!--Scripts -->
 	<script src="/js/editor/ckeditor.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -163,7 +163,7 @@ int main()
 {
 	cout<<"Hello world!";
 }
-</pre>  
+</pre>
 
 <!-- Mesaj eroare sintaxa -->
 <div id="myModal" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -187,7 +187,7 @@ int main()
 		<div class="modal-dialog modal-lg">
 		<div style="height:200px;" class="modal-content">
 		<h3 style="text-align:center;  font-family: 'Open Sans', sans-serif; font-weight: lighter; color: #2679b5;">Trebuie să fii logat pentru a rezolva aceasta problema</h3> <br>
-					
+
 	<p style="text-align:center;">
 	<a href="/forum/ucp.php?mode=login"><button type="button" class="btn btn-default btn-lg">Loghează-te</button></a>
 	<a href="/forum/ucp.php?mode=register"><button style="margin-left:10px;" type="button" class="btn btn-default btn-lg">Înregistrează-te</button></a>
@@ -244,13 +244,14 @@ function trimite() {
 		document.getElementById("output").innerHTML=str[0];
 		document.getElementById("timp").innerHTML=str[2];
 		document.getElementById("memorie").innerHTML=str[3];
-		if(str[0]=="Eroare in sintaxa" && str[4]!=null)
-		{
-			document.getElementById("modal-content1").innerHTML="<br>"+str[4];
-			$('#myModal').modal('show');
+
+			if( str[4] != null )
+			{
+				document.getElementById("modal-content1").innerHTML="<br>"+str[4];
+				$('#myModal').modal('show');
+			}
 		}
-		}
-	} 
+	}
 	var body = "ide_input=" + encodeURIComponent(document.getElementById("input").value) + "&ide_source="+ encodeURIComponent(editor.getValue()) +"&ide_limbaj=" +encodeURIComponent(document.getElementById("limbaj").value);
 	xmlhttp.open("POST", "scripts/ide-upload.php", true);
 	xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -275,7 +276,7 @@ function trimite_problema() {
 	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
 		{
 		var str=xmlhttp.responseText;
-		str=str.split("#"); 
+		str=str.split("#");
 		document.getElementById("trimite").innerHTML = "Trimite";
 		if(str==991)
 		{
@@ -288,14 +289,14 @@ function trimite_problema() {
 			document.getElementById("raport_evaluare").innerHTML = "<a href=\"/monitor.php?type=view&id="+str[1]+"\">Raportul evaluării</a>";
 		}
 		}
-	} 
+	}
 	var body = "from=ide&ide_source="+ encodeURIComponent(editor.getValue()) +"&ide_limbaj=" +encodeURIComponent(document.getElementById("limbaj").value) + '&arhiva_nume=' + encodeURIComponent(document.getElementById("ide_problem_name").value) + "&job_contest="+ encodeURIComponent(document.getElementById("arhiva_runda").value);
 	xmlhttp.open("POST", "scripts/arhiva-solve.php", true);
 	xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	xmlhttp.setRequestHeader("Content-Length", body.length);
 	xmlhttp.setRequestHeader("Connection", "close");
 	xmlhttp.send(body);
-	
+
 	//xmlhttp.open('POST', 'scripts/editor-save.php');
     //xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
    // xmlhttp.send("content=" + editor.getValue() + "&file="+ document.getElementById('fisiere').value);
@@ -307,7 +308,7 @@ function ide_runda() {
 	  xmlhttp=new XMLHttpRequest();
 	else
 	  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	 
+
 	xmlhttp.onreadystatechange=function()
 	  {
 	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
@@ -327,7 +328,7 @@ function ide_runda() {
 			  select.appendChild(el);
 		  }
 		}
-	  } 
+	  }
 	var body = "arhiva_nume=" + encodeURIComponent(document.getElementById("ide_problem_name").value);
 	xmlhttp.open("POST", "scripts/ide-get-runda.php", true);
 	xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

@@ -28,7 +28,7 @@ while($k=mysql_fetch_array($query))
 		{
 			$id=$k["competitii_id"];
 			mysql_query("UPDATE `competitii` SET `competitii_status` = 'Terminat' WHERE `competitii`.`competitii_id` = '$id'");
-			
+
 		if($k["competitii_oficial"]==1)
 		{
 			$name=$k["competitii_nume"];
@@ -77,7 +77,7 @@ while($k=mysql_fetch_array($query))
 						$aux=$puncte_total_aux[$i];
 						$puncte_total_aux[$i]=$puncte_total_aux[$j];
 						$puncte_total_aux[$j]=$aux;
-						
+
 						$aux=$sort[$i];
 						$sort[$i]=$sort[$j];
 						$sort[$j]=$aux;
@@ -86,13 +86,13 @@ while($k=mysql_fetch_array($query))
 			}
 			 $us=$user[$sort[0]];
 			 mysql_query("UPDATE `phpbb_users` SET `user_puncte_competitii` = `user_puncte_competitii`+30 WHERE `phpbb_users`.`username_clean` = '$us';");
-			 
+
 			 if($nr_user>=2)
 			 {
 			  $us=$user[$sort[1]];
 			 mysql_query("UPDATE `phpbb_users` SET `user_puncte_competitii` = `user_puncte_competitii`+20 WHERE `phpbb_users`.`username_clean` = '$us';");
 			 }
-			 
+
 			 if($nr_user>=3)
 			 {
 			  $us=$user[$sort[2]];
@@ -100,9 +100,9 @@ while($k=mysql_fetch_array($query))
 			 }
 		}
 		}
-	
+
 	}
 }
+echo "Done";
 //header('Location: /competitii.php');
 ?>
-

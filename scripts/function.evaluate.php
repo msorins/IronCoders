@@ -21,8 +21,10 @@ function evaluate($source, $compiled, $language, $in, $out, $errorP, $memory_lim
 		//compilez sursa
 		if($doCompile == True ) {
 
-		if($language=="cpp")
+		if($language=="cpp") {
+			exec("sudo docker exec eval rm /eval-folder/".$compiled_name);
 			$compiler=exec("sudo docker exec eval g++  /eval-folder/'$source_name' -o /eval-folder/'$compiled_name'  2> '$errorP'");
+		}
 		if($language=="c")
 			$compiler=exec("sudo docker exec eval gcc /eval-folder/'$source_name' -o /eval-folder/'$compiled_name'  2> '$errorP'");
 	    if($language=="pas")
