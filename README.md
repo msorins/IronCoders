@@ -96,3 +96,11 @@ Forum-ul si modulul de juniorCoders sunt bazate pe stack-ul MEAN:
 
 ## Cerinte sistem ##
 Este necesar un VPS care sa aiba Ubuntu 14.04 si acces root la linia de comanda.
+
+## Parti de cod importate ##
+* Fisierul C care se ocupa cu monitorizarea memoriei si a timpului fiecarui program ( de pe Infoarena ). Pe deasupra evaluatorul este scris de mine in PHP
+* Forum NodeBB
+* Bootstrap - FrameWork FrontEnd
+* Ace Text editor 
+* Snippets from StackOverflow
+* Docker pentru virtualizarea unui container in care se evalueaza toate sursele triise
