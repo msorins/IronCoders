@@ -6,11 +6,11 @@ It is one of my first projects that I have worked on during high school, more sp
 ## Video demo
 [![](http://img.youtube.com/vi/ziCL3cjkdRs/0.jpg)](http://www.youtube.com/watch?v=ziCL3cjkdRs "IronCodersDemo")
 
-![1.png](https://github.com/msorins/IronCoders/image-demo1.png)
+![1.png](https://github.com/msorins/IronCoders/blob/master/image-demo1.png?raw=true)
 
-![2.png](https://github.com/msorins/IronCoders/image-demo2.png)
+![2.png](https://github.com/msorins/IronCoders/blob/master/image-demo2.png?raw=true)
 
-![3.png](https://github.com/msorins/IronCoders/image-demo3.png)
+![3.png](https://github.com/msorins/IronCoders/blob/master/image-demo3.png?raw=true)
 
 ## Platforma este impartita in mai multe module : ##
 Arhiva de probleme
