@@ -1,13 +1,16 @@
 # Platforma este live la adresa [ironcoders.com](http://ironcoders.com/) #
 
-## IronCoders este o platforma online care faciliteaza invatarea programarii oferind unelte si resurse in acest scop.
+## IronCoders is an online platform that facilitates learning of programming through specialised tools and resources.	
+It is one of my first projects that I have worked on during high school, more specifically 10th and 11th grade.
 
+## Video demo
+[![](http://img.youtube.com/vi/ziCL3cjkdRs/0.jpg)](http://www.youtube.com/watch?v=ziCL3cjkdRs "IronCodersDemo")
 
-![1.png](https://bitbucket.org/repo/XBzxXA/images/2300921727-1.png)
+![1.png](https://github.com/msorins/IronCoders/image-demo1.png)
 
-![2.png](https://bitbucket.org/repo/XBzxXA/images/3481299823-2.png)
+![2.png](https://github.com/msorins/IronCoders/image-demo2.png)
 
-![3.png](https://bitbucket.org/repo/XBzxXA/images/1247627031-3.png)
+![3.png](https://github.com/msorins/IronCoders/image-demo3.png)
 
 ## Platforma este impartita in mai multe module : ##
 Arhiva de probleme
@@ -22,42 +25,37 @@ Blog
 Forum
 Chat
 
-Pagina principala contine o lista in care sunt prezentate toate aceste module pentru a facilita navigarea pe site si pentru a ii oferi utilizatorului o prezentare completa a tuturor facilitatilor de care se poate folosi.
+## Platform's modules :
+Archive of problems + educational archive
+Evaluation Monitor
+IDE 
+Interactive courses 
+Competitions 
+Virtual classes 
+Forum
 
-## Arhiva de probleme ##
+## Archive of problems
+Is the first working module of IronCoders, as its name says it contains a list of problems which can be solved by the members of the site (using the integrated IDE or uploading directly the source code). Problems are classified into two big categories 
+The educational archive: where all the problems are made specially to emphasise a single algorithm (with all the explications needed)
+The contest & olympiad archive 
+ Each code is evaluated and graded automatically by the same criteria that are present at olympics (time and memory) . 
+Problems can be uploaded with ease by anyone and for every problem there is created automatically a thread on the forum (which is phpbb) and in this way the comment section was made. 
+Through the evaluation monitor, users can see how their code performed, they can find out on which tests their program failed and why (wrong answer, time limit exceeded ,how much memory was used).  It is not possible to view other sources until you managed to achieve 100 points (the maximum), unless the problem is in the educational archive (where it is beneficial to see how others did it and learn from it).
 
-Asa cum ii zice numele, contine probleme date la olimpiade si concursuri scolare. Acestea reprezentand ocazia perfecta pentru a-ti testa cunostiintele acumulate, deoarecele sursele trimise sunt corectate automat de catre un evaluator. Astfel mereu vei stii daca programul tau este corect si eficient .
+## IDE
+It mades coding possible without the need of an external program, also, in order to create a more complete user experience,  this module is integrated with the ‘archive of problems’. Currently , C++ and C are available (the main two languages used in Romanian Schools), in the future of course that there is a plan to implement new languages.
 
-Arhiva de probleme educationala contine un set de probleme a caror singur scop este prezentarea unor algoritmi. Astfel fiecare problema va contine o parte teoretica si o parte practica prin care, cu ajutorul evaluatorului se poate verifica corectitudinea programelor scrise.
+## Interactive Courses
+Is one of the most important modules of the platform. As it names says it represents a more useful way of learning how to code. It basically makes all the process interactive, by organizing all the lessons in two parts, a theoretical and a practical one (the page is split in two parts, in one of them you can view the theory, and after that, you can complete the requested programming part in order to advance to the next lesson). Also, this module is designed to permit a custom feedback for every part of the code that is written , so that each user can discover (and understand) exactly what are the problems in their code and fix them.
+By using AJAX, it is possible to complete the lessons without refreshing the page, making the process a lot smoother. 
 
-La arhiva este legat un monitor de evaluare care contine o lista cu toate sursele evaluate, aceasta lista poate fi triata dupa un anumit utilizator sau o anumita problema . De asemenea fiecare sursa este insotita de catre un raport complet generat de catre evaluator, care iti permite sa afli exact motivul pentru care nu ai luat punctajul complet.
+## Competitions
+Was made in order to give the users the possibility to test their knowledges against others. There are 2 type of contests, the official one (organized by a member of the staff), and the regular one which can be created by everybody (they are usually used before the olympics to simulate a similar experience),  the contest can be configured to last a variable amount of time and to begin at a certain time. When a contest has finished, a ranking page is created and all the evaluation reports are made available for the participant .
 
-## Compilator online ( IDE ) ##
+## Virtual classes
+Offers a similar experience to the atmosphere of a real classroom, where a few designated person have the possibility to teach others, to give assignments , evaluate them, to chat with them (for every class there is another instance of the ‘chat’ module) .
 
-Este o pagina care iti creeaza un mediu de programare direct in broswer ( Este asemanator cu CodeBlocks-ul sau MinGW ).
-
-## Cursuri interactive ##
-
-Reprezinta un sistem inovativ de învățare, care imbina teoria cu practica. Este organizat pe lecții, iar dupa completarea fiecarei lectii , codul scris iti va fi evaluat , in cazul in care ai gresit iti va fi afisat un sfat care sa te ajute sa iti corectezi gresala, iar daca este corect vei putea trece la urmatoarea lectie.
-
-La fiecare lectie in partea stanga este un spatiu in care poti programa, iar in partea dreapta sunt explicatiile si instructiunile.
-
-## Competitii
- ##
-Acest sistem iti ofera oportunitatea sa concurezi direct cu alte persoane care folosesc site-ul. Iar in acest mod poti evalua exact nivelul la care esti, prin comparatie cu ceilalti utilizatori.
-
-Fiecare utiizator isi poate face propria competitie, care poate fi amicala, sau care poate simula o olimpiada locala, judeteana sau chiar nationala .
-
-De asemenea acest sistem duce la posibilitatea organizarii de competitii intr-un mod simplu si intuitiv. La finalizarea competitiei, evaluatorul va genera un clasament cu punctajul tuturor participantilor.
-
-## Clasele virtuale ##
-
-Oferă o experiență similară cu cea din școli, în sălile de curs. Iți permite să înveți alături de o persoană experimentată precum un profesor care iți va corecta munca și iți va explica unde ai greșit.
-
-Fiecare clasa este organizata dupa anumite sarcini care sunt stabilite de catre persoana care a creat clasa sau de catre o persoana care are suficiente privilegii. Pentru a facilita comunicarea dintre profesor - student este prezent un chat.
-
-Unele clase sunt publice, astfel toata lumea se poate inscrie, iar alte clase sunt private, intrarea facandu-se pe baza de invitatie.
-
+---
 ## Management surse
 
 Cu toate ca sursele trimise spre evaluare iti sunt salvate si pot fi accesate oricand, acest sistem iti va permite sa iti organizezi toti algoritmii scrisi astfel incat sa ii poti accesa oricand si de oriunde.
@@ -86,7 +84,6 @@ Modulele principale ale site-ului sunt bazate pe stack-ul LAMP:
 * SQL
 * Bootstrap
 
-
 Forum-ul si modulul de juniorCoders sunt bazate pe stack-ul MEAN:
 
 * MongoDB
@@ -94,8 +91,6 @@ Forum-ul si modulul de juniorCoders sunt bazate pe stack-ul MEAN:
 * Javascript
 * NodeJs
 
-## Cerinte sistem ##
-Este necesar un VPS care sa aiba Ubuntu 14.04 si acces root la linia de comanda.
 
 ## Parti de cod importate ##
 * Fisierul C care se ocupa cu monitorizarea memoriei si a timpului fiecarui program ( de pe Infoarena ). Pe deasupra evaluatorul este scris de mine in PHP
