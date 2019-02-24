@@ -1,4 +1,4 @@
-# Platforma este live la adresa [ironcoders.com](http://ironcoders.com/) #
+# The project is live  [ironcoders.com](http://ironcoders.com/) #
 
 ## IronCoders is an online platform that facilitates learning of programming through specialised tools and resources.	
 It is one of my first projects that I have worked on during high school, more specifically 10th and 11th grade.
@@ -12,7 +12,7 @@ It is one of my first projects that I have worked on during high school, more sp
 
 ![3.png](https://github.com/msorins/IronCoders/blob/master/image-demo3.png?raw=true)
 
-## Platforma este impartita in mai multe module : ##
+## Platform modules: ##
 Arhiva de probleme
 Arhiva educationala
 Monitorul de evaluare
@@ -26,13 +26,13 @@ Forum
 Chat
 
 ## Platform's modules :
-Archive of problems + educational archive
-Evaluation Monitor
-IDE 
-Interactive courses 
-Competitions 
-Virtual classes 
-Forum
+1. Archive of problems + educational archive
+2. Evaluation Monitor
+3. IDE 
+4. Interactive courses 
+5. Competitions 
+6. Virtual classes 
+7. Forum
 
 ## Archive of problems
 Is the first working module of IronCoders, as its name says it contains a list of problems which can be solved by the members of the site (using the integrated IDE or uploading directly the source code). Problems are classified into two big categories 
@@ -99,3 +99,8 @@ Forum-ul si modulul de juniorCoders sunt bazate pe stack-ul MEAN:
 * Ace Text editor 
 * Snippets from StackOverflow
 * Docker pentru virtualizarea unui container in care se evalueaza toate sursele triise
+
+
+---
+
+[I'm an inline-style link](https://www.google.com)
